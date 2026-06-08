@@ -1,4 +1,15 @@
-# Astro Starter Kit: Basics
+## The P3D Project Website
+## Goals
+- Host our web tools
+- Host our hand-written docs
+- Host the auto-generated Doxygen docs
+- Be a fun site that showcases/advertises the project, eventually beocming "face" of the project (instead of the main game engine's repo)
+
+This new site will replace the current site, https://persona-3-dual.vercel.app/
+
+---
+
+## Astro Starter Kit: Basics
 
 ```sh
 npm create astro@latest -- --template basics

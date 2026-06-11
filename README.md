@@ -13,6 +13,10 @@ For website components, use Vue or React.
 - React is more industry standard (more people will know it)
 - Vue is more intuative (easier for first-time learners)
 
+## Website URLs
+http://p3dual.com/
+http://p3d-project.com/
+
 ---
 
 ## Astro Starter Kit: Basics

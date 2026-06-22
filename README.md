@@ -9,9 +9,8 @@ This new site will replace the current site, https://persona-3-dual.vercel.app/
 
 ## Dev Rules
 For website styling, use Tailwind CSS + DaisyUI + standard CSS
-For website components, use Vue or React.
+For website components, use React.
 - React is more industry standard (more people will know it)
-- Vue is more intuative (easier for first-time learners)
 
 ## Website URLs
 http://p3dual.com/

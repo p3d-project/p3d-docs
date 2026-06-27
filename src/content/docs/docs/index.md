@@ -1,6 +1,5 @@
 ---
-title: My docs
-description: Learn more about my project in this docs site built with Starlight.
+title: Welcome to the Docs
 ---
 
-Welcome to my project!
+Docs home page

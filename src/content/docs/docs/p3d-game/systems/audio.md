@@ -1,7 +1,6 @@
 ---
-title: Welcome to the Docs
+title: Audio
 ---
-# Audio
 
 Audio is handled by `MusicController` (`source/controllers/MusicController.h`), a wrapper around **Maxmod** for SFX and a custom **PCM streaming** system for background music.
 
@@ -9,7 +8,7 @@ Audio is handled by `MusicController` (`source/controllers/MusicController.h`), 
 
 ## Music
 
-### Format
+#### Format
 
 All music is stored as raw PCM in `data/music/`. Source files are `.mp3` in `assets/music/` and are converted automatically by the Makefile via FFmpeg:
 

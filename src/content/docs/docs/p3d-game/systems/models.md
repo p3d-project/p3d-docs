@@ -1,7 +1,6 @@
 ---
-title: Welcome to the Docs
+title: Models
 ---
-# Models
 ## Import GMO Models into Blender
 To import GMO models into Blender, you need to download the [Noesis Model Viewer](https://richwhitehouse.com/index.php?content=inc_projects.php&showproject=91).
 

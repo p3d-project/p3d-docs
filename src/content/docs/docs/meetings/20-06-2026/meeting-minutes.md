@@ -1,17 +1,6 @@
 ---
-title: Welcome to the Docs
+title: Sync Meeting Minutes
 ---
-# 
-
-# 
-
-# 
-
-# 
-
-# 
-
-# **P3D Sync**: 20/06/2026
 
 **Attended by:** All Hands
 
@@ -19,45 +8,9 @@ title: Welcome to the Docs
 
 **Meeting Goal:** Finalize Milestone \#2 and video themes, and bring awareness to new website.
 
-[1\. Kickoff & Agenda (5 mins)	2](#1.-kickoff-&-agenda-\(5-mins\))
+## Kickoff & Agenda (5 mins)
 
-[Last meeting recap (June 6\)	2](#last-meeting-recap-\(june-6\))
-
-[This meeting rundown	2](#this-meeting-rundown)
-
-[Announcements	2](#announcements)
-
-[2\. Milestone Progress (10 mins)	3](#2.-milestone-progress-\(10-mins\))
-
-[3\. Round the Table (15 mins \- Timeboxed)	3](#3.-round-the-table-\(15-mins---timeboxed\))
-
-[4\. Show & Tell (15 mins)	3](#4.-show-&-tell-\(15-mins\))
-
-[5\. Action Items & Next Steps (5 mins)	3](#5.-action-items-&-next-steps-\(5-mins\))
-
-[6\. The Parking Lot & Open Floor (Remaining Time)	3](#6.-the-parking-lot-&-open-floor-\(remaining-time\))
-
-[Milestone \#2	4](#milestone-#2)
-
-[Website	4](#website)
-
-[Video	4](#video)
-
-[(Seperate \- Dev team only)	5](#\(seperate---dev-team-only\))
-
-[**Meeting Notes	6**](#meeting-notes)
-
-[Round the table	6](#round-the-table)
-
-[Game Dev	6](#game-dev)
-
-[General	7](#general)
-
-# 
-
-# 1\. Kickoff & Agenda (5 mins) {#1.-kickoff-&-agenda-(5-mins)}
-
-## Last meeting recap (June 6\) {#last-meeting-recap-(june-6)}
+### Last meeting recap (June 6)
 
 * Refactor of battle system  
 * Discussion of having a scalable DB system in the future (personas, skills, etc)  
@@ -73,7 +26,7 @@ title: Welcome to the Docs
 
   * Pixel \+ invertstick initially assigned for promo video
 
-## This meeting rundown {#this-meeting-rundown}
+### This meeting rundown
 
 * (2) Go over Milestone \#1 progress, eta  
   * [P3D Project: Roadmap](https://docs.google.com/document/d/1VUxY2xVGtKzGWCES0VeZ_-vMpKSifB5vTW2ZkXJMPJM/edit?usp=sharing)  
@@ -95,7 +48,7 @@ title: Welcome to the Docs
   * Organization/assignment of people for this task  
 * (Seperate) Dev meeting
 
-## Announcements {#announcements}
+### Announcements
 
 * Put credits on credits document, credit any work that you use/take (plagiarism is not tolerated)  
   * [P3D Credits](https://docs.google.com/document/d/1o4yYHUHckUv_A4rzaxRIBapj_tQeJ91JSKWS866kY64/edit?usp=sharing)  
@@ -109,13 +62,13 @@ title: Welcome to the Docs
   * [P3D Social Media Guidlines](https://docs.google.com/document/d/12baHQtvD4Ln1NCHC8I-eJDbwNMQgwNfXb8yte3n8Mmk/edit?usp=sharing)  
 * Welcome to new members\!
 
-# 2\. Milestone Progress (10 mins) {#2.-milestone-progress-(10-mins)}
+## Milestone Progress (10 mins)
 
 * **Current Milestone:** Milestone \#1  
 * **Status Check:** Are we on track? Yes  
 * **Task Updates:** New tasks added/modified/shifted scopes? Go over [P3D Roadmap](https://docs.google.com/document/d/1VUxY2xVGtKzGWCES0VeZ_-vMpKSifB5vTW2ZkXJMPJM/edit?usp=sharing)
 
-# 3\. Round the Table (15 mins \- *Timeboxed*) {#3.-round-the-table-(15-mins---timeboxed)}
+## Round the Table (15 mins \- *Timeboxed*)
 
 Everyone here TALKS about what they did
 
@@ -127,20 +80,20 @@ Everyone here TALKS about what they did
   * Currently/plan to work on \[task\], and do \[list what you plan to do\]  
 * *Rule: Any deep discussions are moved to the Parking Lot.*
 
-# 4\. Show & Tell (15 mins) {#4.-show-&-tell-(15-mins)}
+## Show & Tell (15 mins)
 
 Everyone here SHOWS what they did (see [Meeting 20/06/2026](https://docs.google.com/presentation/d/1R36tp97zW9zWLhry5glMC76df3NgVhciIqynWnwcnC0/edit?usp=sharing))
 
-# 5\. Action Items & Next Steps (5 mins) {#5.-action-items-&-next-steps-(5-mins)}
+## Action Items & Next Steps (5 mins)
 
 * Assign specific tasks to specific people with target dates.  
 * Document any major decisions made during the meeting.
 
-# 6\. The Parking Lot & Open Floor (Remaining Time) {#6.-the-parking-lot-&-open-floor-(remaining-time)}
+## The Parking Lot & Open Floor (Remaining Time)
 
 Tackle the complex issues tabled during the "Round the Table". Then, general free time with socializing, or dropping off the call if not needed for the deep-dives.
 
-## Milestone \#2 {#milestone-#2}
+### Milestone \#2
 
 * Quickly go over it, make sure everyone is aware of it  
 * Graphics team-heavy milestone  
@@ -156,7 +109,7 @@ Tackle the complex issues tabled during the "Round the Table". Then, general fre
   * Graphics custom text engine?  
   * Remove bad graphics rendering support from dialogue, menu systems
 
-## Website {#website}
+### Website
 
 * Need devs/graphics people for this  
 * The site is meant to be a fun, cool project. This is where we can really have lots of fun with design  
@@ -175,7 +128,7 @@ Tackle the complex issues tabled during the "Round the Table". Then, general fre
   * [https://persona5.jp/](https://persona5.jp/)   
   * [https://rpg.jp/](https://rpg.jp/)
 
-## Video {#video}
+### Video
 
 * Can video production start?  
 * Video team  
@@ -195,8 +148,7 @@ Tackle the complex issues tabled during the "Round the Table". Then, general fre
   * [Persona 4 Revival — Teaser Trailer](https://youtu.be/Tcrb4s9ecd4)\- Quick, short, cool. Teaser to announce project/hype up game  
   * [Atlus USA Announcement Trailer: Persona 4](https://youtu.be/O10pqWZPhiU)\- Animation-heavy.
 
-## (Seperate \- Dev team only) {#(seperate---dev-team-only)}
-
+### (Seperate \- Dev team only)
 * Need to go through all of the code and make Doxygen-compatible documentation  
   * Submit for Milestone \#1 as we wait for a promo video?  
   * Javadoc style  
@@ -216,11 +168,9 @@ Tackle the complex issues tabled during the "Round the Table". Then, general fre
 * New team member  
   * Experience?
 
-# Meeting Notes {#meeting-notes}
-
-## Round the table {#round-the-table}
-
-### Game Dev {#game-dev}
+## Meeting Notes
+### Round the table
+#### Game Dev
 
 TheMoonWalker
 
@@ -273,7 +223,7 @@ Pyromaniax
 * Interested in working on the website  
   * Will learn react along the way
 
-## General {#general}
+### General
 
 * Milestone \#2  
   * Maybe look at adding animated portraits on the characters (for dialogue scenes)  

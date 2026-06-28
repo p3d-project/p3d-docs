@@ -1,9 +1,6 @@
 ---
-title: Welcome to the Docs
+title: Dev Team Reference
 ---
-
-# Dev Team Reference
-
 A collection of useful links and resources for development.
 
 ---

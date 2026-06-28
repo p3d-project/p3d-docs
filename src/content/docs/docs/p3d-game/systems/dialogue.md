@@ -1,8 +1,6 @@
 ---
-title: Welcome to the Docs
+title: Dialogue
 ---
-# Dialogue
-
 ## Overview
 
 `dialogue_compiler.py` takes a `.dlg` script and produces a `.h` + `.cpp` pair

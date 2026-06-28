@@ -1,8 +1,6 @@
 ---
-title: Welcome to the Docs
+title: Scenes
 ---
-# Scenes
-
 Scenes are individual game areas, each one is a class that inherits from `View` and lives in `source/views/`. The active scene is managed in `main.cpp` via `SwitchView()`, which handles cleanup of the old scene and init of the new one.
 
 ---

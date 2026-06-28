@@ -1,5 +1,5 @@
 ---
-title: Welcome to the Docs
+title: License
 ---
 Attribution-NonCommercial-ShareAlike 4.0 International
 

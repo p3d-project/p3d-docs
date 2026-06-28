@@ -1,8 +1,6 @@
 ---
-title: Welcome to the Docs
+title: Art Team Reference
 ---
-# Art Team Reference
-
 This document covers the technical constraints and workflows the P3D art team needs to be aware of when creating assets. Understanding the DS hardware limitations is essential. Assets that don't conform to these specs won't display correctly in-game.
 
 ---

@@ -1,8 +1,6 @@
 ---
-title: Welcome to the Docs
+title: README
 ---
-# Persona 3 Dual
-
 A Nintendo DS demake of **Persona 3**, developed in C++ using devkitPro. Based on the **Persona 3** series of games and inspired by the **Persona 3 Dual** online joke.
 > Want to help? Join the [Discord!](https://discord.gg/CQnkc5gS6a) Any help, big or small, would be greatly appreciated!
 

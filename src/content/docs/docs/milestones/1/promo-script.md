@@ -1,5 +1,5 @@
 ---
-title: Welcome to the Docs
+title: Promo Script
 ---
 ## PARTS
 
@@ -28,10 +28,6 @@ Outro/Credits
 FEMC surprise
 
 * Editor: GODOT (working on concept)
-
-## 
-
-## 
 
 ## Video
 

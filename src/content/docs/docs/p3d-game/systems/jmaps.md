@@ -1,8 +1,6 @@
 ---
-title: Welcome to the Docs
+title: Mapping/Collision
 ---
-# Mapping/Collision
-
 Each area is authored as a `.jmap` file in `assets/maps/`. The build system converts it to a `.h` header via `build_asset.py` on `make`.
 
 ---

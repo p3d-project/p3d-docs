@@ -1,8 +1,6 @@
 ---
-title: Welcome to the Docs
+title: Onboarding Guide
 ---
-# Onboarding Guide
-
 Welcome to the Persona 3 Dual team! This guide will get you set up and oriented regardless of your role.
 
 ---

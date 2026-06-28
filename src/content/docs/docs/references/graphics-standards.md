@@ -77,4 +77,4 @@ Example: Kotone\_Battle\_Angry.png
 
 ## Formatting, Resolution, etc.
 
-See [https://persona-3-dual.vercel.app/docs?doc=md%2FART\_REFERENCE.md](https://persona-3-dual.vercel.app/docs?doc=md%2FART_REFERENCE.md) 
+See [Art Reference](/docs/references/art-reference) 

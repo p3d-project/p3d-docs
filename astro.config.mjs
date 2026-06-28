@@ -10,7 +10,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://p3dual.com',
   integrations: [starlight({
-    title: 'P3D Project Docs',
+    title: 'Docs',
     logo: {
       src: './src/assets/logo.png',
     },
@@ -32,6 +32,82 @@ export default defineConfig({
     ],
     sidebar: [
       { label: 'Home', link: '/' },
+      { label: 'Code of Conduct', link: 'docs/code-of-conduct' },
+      { label: 'Onboarding', link: 'docs/onboarding' },
+      { 
+        label: 'Guides',
+        items:
+        [
+          'docs/guides/credits',
+          'docs/guides/q-and-a',
+          'docs/guides/roadmap',
+          'docs/guides/roles',
+          'docs/guides/social-media-guidelines',
+          'docs/guides/team-rules',
+        ]
+      },
+      {
+        label: 'Meetings',
+        items:
+        [
+          {
+            label: '20-06-2026',
+            items:
+            [
+              'docs/meetings/20-06-2026/meeting-minutes'
+            ]
+          }
+        ]
+      },
+      {
+        label: 'Milestones',
+        items:
+        [
+          {
+            label: 'Milestone 1',
+            items:
+            [
+              'docs/milestones/1/promo-script',
+              'docs/milestones/1/promo-sources',
+              'docs/milestones/1/socials',
+            ]
+          }
+        ]
+      },
+      { label: 'P3D-Amicitia', link: '/docs/p3d-amicitia' },
+      {
+        label: 'P3D-Game',
+        items:
+        [
+          'docs/p3d-game/contributing',
+          'docs/p3d-game/license',
+          'docs/p3d-game/readme',
+          {
+            label: 'Systems',
+            items:
+            [
+              'docs/p3d-game/systems/audio',
+              'docs/p3d-game/systems/collision',
+              'docs/p3d-game/systems/dialogue',
+              'docs/p3d-game/systems/environments',
+              'docs/p3d-game/systems/jmaps',
+              'docs/p3d-game/systems/models',
+              'docs/p3d-game/systems/scenes',
+            ]
+          }
+        ]
+      },
+      { label: 'P3D-Website', link: '/docs/p3d-website' },
+      {
+        label: 'References',
+        items:
+        [
+          'docs/references/art-reference',
+          'docs/references/dev-reference',
+          'docs/references/graphics-standards',
+          'docs/references/ripping-reference',
+        ]
+      },
     ],
   }),],
 

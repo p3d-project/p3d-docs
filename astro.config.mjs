@@ -36,31 +36,18 @@ export default defineConfig({
     ],
     sidebar: [
       { label: 'Home', link: '/' },
-      { label: 'Code of Conduct', link: 'docs/code-of-conduct' },
-      { label: 'Onboarding', link: 'docs/onboarding' },
+      { label: 'Roadmap', link: 'docs/guides/roadmap'},
       { 
-        label: 'Guides',
+        label: 'Getting Started',
         items:
         [
-          'docs/guides/credits',
-          'docs/guides/q-and-a',
-          'docs/guides/roadmap',
-          'docs/guides/roles',
+          'docs/code-of-conduct',
           'docs/guides/social-media-guidelines',
+          'docs/guides/roles',
+          'docs/guides/team-application',
           'docs/guides/team-rules',
-        ]
-      },
-      {
-        label: 'Meetings',
-        items:
-        [
-          {
-            label: '20-06-2026',
-            items:
-            [
-              'docs/meetings/20-06-2026/meeting-minutes'
-            ]
-          }
+          'docs/onboarding',
+          'docs/guides/q-and-a',
         ]
       },
       {
@@ -71,14 +58,12 @@ export default defineConfig({
             label: 'Milestone 1',
             items:
             [
-              'docs/milestones/1/promo-script',
               'docs/milestones/1/promo-sources',
-              'docs/milestones/1/socials',
             ]
           }
         ]
       },
-      { label: 'P3D-Amicitia', link: '/docs/p3d-amicitia' },
+      { label: 'P3D-Amicitia', link: '/docs/p3d-amicitia/readme' },
       {
         label: 'P3D-Game',
         items:
@@ -101,7 +86,7 @@ export default defineConfig({
           }
         ]
       },
-      { label: 'P3D-Website', link: '/docs/p3d-website' },
+      { label: 'P3D-Website', link: '/docs/p3d-website/readme' },
       {
         label: 'References',
         items:
@@ -112,6 +97,7 @@ export default defineConfig({
           'docs/references/ripping-reference',
         ]
       },
+      { label: 'Credits', link: 'docs/guides/credits'}
     ],
   }), mdx(), react()],
 

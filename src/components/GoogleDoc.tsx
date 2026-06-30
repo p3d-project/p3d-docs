@@ -1,12 +1,19 @@
 // View Google Doc embeds
 interface GoogleDocProps {
     src: string;
+    isEditable: boolean
 }
 
-function GoogleDoc({ src }: GoogleDocProps) {
+function GoogleDoc({ src, isEditable = true }: GoogleDocProps) {
+    let editLink = null;
+    
+    if (isEditable) {
+        editLink = <a href={src}>Edit this document</a>;
+      }
+
     return (
         <div>
-            <a href={src}>Edit this document</a>
+            {editLink}
             <iframe
                 id={'googleDoc-' + src}
                 className="w-full min-h-[100vh]"

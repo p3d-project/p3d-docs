@@ -4,6 +4,10 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import tailwindcss from '@tailwindcss/vite';
 
+import mdx from '@astrojs/mdx';
+
+import react from '@astrojs/react';
+
 // https://astro.build/config
 // See https://docs.astro.build/en/guides/deploy/github/
 // See https://starlight.astro.build/getting-started/
@@ -109,7 +113,7 @@ export default defineConfig({
         ]
       },
     ],
-  }),],
+  }), mdx(), react()],
 
   vite: {
     plugins: [tailwindcss()],

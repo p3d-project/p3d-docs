@@ -1,6 +1,7 @@
 ---
 title: Collision
 ---
+> #### **NOTE**: This document will be deprecated in the near future. Some items may be outdated/incorrect
 
 Collision is driven by a 2D tile map overlaid on the 3D world. Each area/scene has a `.jmap` file in `assets/maps/` that defines the tile grid (see [JMAPS.md](JMAPS.md) for the format.)
 

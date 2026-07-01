@@ -1,6 +1,8 @@
 ---
 title: Mapping/Collision
 ---
+> #### **NOTE**: This document will be deprecated in the near future. Some items may be outdated/incorrect
+
 Each area is authored as a `.jmap` file in `assets/maps/`. The build system converts it to a `.h` header via `build_asset.py` on `make`.
 
 ---

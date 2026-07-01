@@ -4,6 +4,10 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import tailwindcss from '@tailwindcss/vite';
 
+import mdx from '@astrojs/mdx';
+
+import react from '@astrojs/react';
+
 // https://astro.build/config
 // See https://docs.astro.build/en/guides/deploy/github/
 // See https://starlight.astro.build/getting-started/
@@ -32,31 +36,19 @@ export default defineConfig({
     ],
     sidebar: [
       { label: 'Home', link: '/' },
-      { label: 'Code of Conduct', link: 'docs/code-of-conduct' },
-      { label: 'Onboarding', link: 'docs/onboarding' },
+      { label: 'Roadmap', link: 'docs/guides/roadmap'},
       { 
-        label: 'Guides',
+        label: 'Getting Started',
         items:
         [
-          'docs/guides/credits',
-          'docs/guides/q-and-a',
-          'docs/guides/roadmap',
-          'docs/guides/roles',
+          'docs/guides/install-game',
+          'docs/code-of-conduct',
           'docs/guides/social-media-guidelines',
+          'docs/guides/roles',
+          'docs/guides/team-application',
           'docs/guides/team-rules',
-        ]
-      },
-      {
-        label: 'Meetings',
-        items:
-        [
-          {
-            label: '20-06-2026',
-            items:
-            [
-              'docs/meetings/20-06-2026/meeting-minutes'
-            ]
-          }
+          'docs/onboarding',
+          'docs/guides/q-and-a',
         ]
       },
       {
@@ -67,14 +59,12 @@ export default defineConfig({
             label: 'Milestone 1',
             items:
             [
-              'docs/milestones/1/promo-script',
               'docs/milestones/1/promo-sources',
-              'docs/milestones/1/socials',
             ]
           }
         ]
       },
-      { label: 'P3D-Amicitia', link: '/docs/p3d-amicitia' },
+      { label: 'P3D-Amicitia', link: '/docs/p3d-amicitia/readme' },
       {
         label: 'P3D-Game',
         items:
@@ -97,19 +87,22 @@ export default defineConfig({
           }
         ]
       },
-      { label: 'P3D-Website', link: '/docs/p3d-website' },
+      { label: 'P3D-Website', link: '/docs/p3d-website/readme' },
       {
         label: 'References',
         items:
         [
-          'docs/references/art-reference',
-          'docs/references/dev-reference',
-          'docs/references/graphics-standards',
-          'docs/references/ripping-reference',
+          'docs/references/game-dev-team-reference',
+          'docs/references/web-dev-team-reference',
+          'docs/references/graphics-team-reference',
+          'docs/references/3d-team-reference',
+          'docs/references/art-standards',
+          'docs/references/art-portfolio',
         ]
       },
+      { label: 'Credits', link: 'docs/guides/credits'}
     ],
-  }),],
+  }), mdx(), react()],
 
   vite: {
     plugins: [tailwindcss()],

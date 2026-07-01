@@ -1,6 +1,7 @@
 ---
 title: Audio
 ---
+> #### **NOTE**: This document will be deprecated in the near future. Some items may be outdated/incorrect
 
 Audio is handled by `MusicController` (`source/controllers/MusicController.h`), a wrapper around **Maxmod** for SFX and a custom **PCM streaming** system for background music.
 

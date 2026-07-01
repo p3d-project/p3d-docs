@@ -5,20 +5,20 @@ Welcome to the Persona 3 Dual team! This guide will get you set up and oriented 
 
 ---
 
-## View the Team Rules
-Read the document [HERE](https://docs.google.com/document/d/14vTlQgszSVKGZUHF3B31w882El7HFMNzBfr_OGV5ixs/edit?usp=sharing)
+## Team Rules
+Read the document [HERE](/docs/guides/team-rules/)
 
 ---
 
-## Join the GitHub Organization & Google Drive
+## Join the GitHub & Google Drive
 
-We use GitHub to track tasks and coordinate across all teams. **Everyone on the project needs to join the org.**
-We use Google Drive to save large files and other assorted documents. **Everyone on the project needs to join the Google Drive.**
+We use GitHub to track tasks and coordinate across all teams. **Everyone on the project needs to join the GitHub.**
+We use Google Drive to save large files and other assorted documents. **The Team Google Drive is optional.**
 
 **Steps:**
 1. Create a [GitHub account](https://github.com) if you don't have one.
 2. Message **@thebosst** on Discord with:
-   - Your team (Dev, Art, Website, Video)
+   - Your team/role
    - Your GitHub username
    - Your current task (if any)
 3. You'll receive an email invitation to join the org - accept it.
@@ -39,6 +39,7 @@ The project board is how we track progress across all teams.
 **Columns:**
 | Column | Meaning |
 |---|---|
+| New | New issue, needs to be reviewed & approved by team leads |
 | Backlog | Not yet started, no current priority |
 | Next Milestone | Targeted for the upcoming milestone |
 | Ready | Current milestone, ready to be picked up |
@@ -48,35 +49,27 @@ The project board is how we track progress across all teams.
 | Suspended | Paused, not actively exploring anymore |
 
 **Guidelines:**
+If you are working on a task (which must have an associated GitHub issue), you must:
 - Drag your issue to **In Progress** when you start, and **Done** when finished.
 - **Assign yourself** to any issue you're working on.
 - **Comment regularly** on your issue to keep the team updated on progress.
+   - No comment = we don't know whats going on, and the *task will be unassigned* from you
 - You can filter by label (e.g. `graphics`, `bug`, `development`, `polish`) or milestone.
 
 ![Filtering by label](/docs/imgs/onboarding/project-board-filter.png)
 
 ### Creating a New Issue
+**Want to add a new issue**? 
+Please use the *Bug report* or *Feature request* templates & add it to the *New* column on the project board. Once the associated team lead sees the issue & agrees, they will move it out of *New*.
+   - Ensure that you **select the correct repo**. Don't know what repo to select? Select the (default) ```p3d-project/persona-3-dual`` repo. 
+   - We put new issues under *New* for a few reasons. It alerts the team leads of new issues; We can ensure the quality of the issue; We can ensure that there isn't a duplicate issue.
 
-Use the following format when creating issues:
-
-```
-## Summary
-[Brief description of what needs to be done and why.]
-
-## Requirements
-- [Requirement 1]
-- [Requirement 2]
-- [Requirement 3]
-
-## Examples / References
-[Screenshots, mockups, links, or other reference material.]
-```
-
+![Create issue](/docs/imgs/onboarding/create-issue.png)
 ![Example issue](/docs/imgs/onboarding/issue-example.png)
 
 ---
 
-## Dev Team Setup
+## Game Dev Team Setup
 https://github.com/p3d-project/persona-3-dual
 
 As an overall rule, the team avoids using external libraries as much as possible. We want to build everything ourselves.
@@ -182,9 +175,8 @@ You'll be inside the container at `/project` (your repo). Type `exit` to leave.
 
 ---
 
-## Website Team Setup
+## Web Dev Team Setup
 https://github.com/p3d-project/p3d-website
-
 The website is an [Astro](https://astro.build) project.
 
 ### Step 1 — Install Dependencies
@@ -211,37 +203,43 @@ npm run build
 
 ---
 
-## Art Team Setup
-
-### Recommended Tools
-
-| Role | Tools |
-|---|---|
-| Graphic Designer | [GIMP](https://www.gimp.org), [Libresprite](https://libresprite.github.io/#!/), [Aseprite](https://www.aseprite.org) |
-| Sprite Work | [GIMP](https://www.gimp.org), [Libresprite](https://libresprite.github.io/#!/), [Aseprite](https://www.aseprite.org) |
-| Modeling | [Blender](https://www.blender.org) |
-| Ripper | [Noesis](https://richwhitehouse.com/index.php?content=inc_projects.php&showproject=91) |
-
-
+## Graphics Team Setup
 ### Workflow
+- **Upload all completed assets and their editable source files to the Team Google Drive [Graphics Folder](https://drive.google.com/drive/folders/1MS2eOnHn5RiMcLRfc8K1s2ZR8FcY3tgq?usp=sharing).**
+- Track your work on the project board. Move issues through the columns as you progress.
+- When uploading assets and closing an issue, leave a comment on the related issue with a link to the Drive folder, and upload viewable images to the issue.
 
-- **Upload all completed assets and their editable source files to [Google Drive](https://drive.google.com/drive/folders/1MS2eOnHn5RiMcLRfc8K1s2ZR8FcY3tgq?usp=sharing).**
+---
+
+## UX/UI Team Setup
+### Workflow
+- **Upload all completed assets and their editable source files to the Team Google Drive [UX/UI Folder](https://drive.google.com/drive/folders/1NU6uU6YxzGKnnmSKPJLesKwnWe7O5gmR?usp=drive_link).**
+- Track your work on the project board. Move issues through the columns as you progress.
+- When uploading assets and closing an issue, leave a comment on the related issue with a link to the Drive folder, and upload viewable images to the issue.
+
+---
+
+## 3D Team Setup
+### Workflow
+- **Upload all completed assets and their editable source files to the Team Google Drive [3D Folder](https://drive.google.com/drive/folders/1FAb7dC2GPEaNTfF5tSxioYkLp6wkU7tT?usp=drive_link).**
+- Track your work on the project board. Move issues through the columns as you progress.
+- When uploading assets and closing an issue, leave a comment on the related issue with a link to the Drive folder, and upload viewable images to the issue.
+
+---
+
+## Music Team Setup
+### Workflow
+- **Upload all completed assets and their editable source files to the Team Google Drive [Music Folder](https://drive.google.com/drive/folders/1suMTqGlqu1NUYZJ7DqjVpWIshWF2ZbXA?usp=drive_link).**
 - Track your work on the project board. Move issues through the columns as you progress.
 - When uploading assets and closing an issue, leave a comment on the related issue with a link to the Drive folder, and upload viewable images to the issue.
 
 ---
 
 ## Video Team Setup
-
-The video team produces **promo videos** and **devlog videos**, paired with each project milestone.
-
-### Recommended Tools
-- TBD
-
 ### Workflow
-- Each milestone gets a promo video and an accompanying devlog.
-- Coordinate with other teams to gather footage, screenshots, and updates before each milestone.
-- **Upload all completed assets and their editable source files to [Google Drive](https://drive.google.com/drive/folders/1AFeO9BUEUAk4rjtS9qVomzTrRqkwQMvz?usp=drive_link)** and link them in the relevant issue.
+- **Upload all completed assets and their editable source files to the Team Google Drive [Video Folder](https://drive.google.com/drive/folders/1AFeO9BUEUAk4rjtS9qVomzTrRqkwQMvz?usp=drive_link).**
+- Track your work on the project board. Move issues through the columns as you progress.
+- When uploading assets and closing an issue, leave a comment on the related issue with a link to the Drive folder, and upload viewable images to the issue.
 
 ---
 

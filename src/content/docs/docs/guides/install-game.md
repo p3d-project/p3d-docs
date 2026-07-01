@@ -2,15 +2,20 @@
 title: Installing the Game
 ---
 
+You can download the game by going to our [GitHub](https://github.com/p3d-project/persona-3-dual) & clicking the latest release
+<img width="800" alt="GitHub Downloads" src="/docs/imgs/install-game/github.png" />
+
 Currently, we only support:
 
-- **[melonDS](https://melonds.kuribo64.net/downloads.php)** (Windows/Linux/MacOS only)
-- **Real DS / DSi / 3DS hardware** via [TWiLight Menu++](https://wiki.ds-homebrew.com/twilightmenu/)
+- **[melonDS Desktop](https://melonds.kuribo64.net/downloads.php)** (Windows/Linux/MacOS)
+- **[melonDS Android](https://github.com/SapphireRhodonite/melonDS-android/releases)** (Android)
+- **Console (DS / DSi / 3DS)** via [TWiLight Menu++](https://wiki.ds-homebrew.com/twilightmenu/)
 
-> Other versions of melonDS may work, but are untested
-> Other flashcard launchers may work, but are untested
+> Other versions of melonDS may work, but are untested.
 
-### melonDS (Emulator)
+> Other flashcard launchers may work, but are untested.
+
+### melonDS (Desktop)
 1. Download `persona-3-dual.nds` and `sdcard.img.zip` from the latest release, & decompress `sdcard.img.zip`
 2. In melonDS, go to **Settings → DLDI** and enable DLDI.
 3. Set the SD card image path to the generated `sdcard.img`.
@@ -18,11 +23,21 @@ Currently, we only support:
 
 Now, you can open melonDS and load the `persona-3-dual.nds` ROM!
 
-<img width="316" height="300" alt="melonDS" src="https://github.com/user-attachments/assets/d34997e6-d13f-4428-a2b6-41b5272405d7" />
+<img width="316" height="300" alt="melonDS" src="/docs/imgs/install-game/melonds.png" />
 
-### Real Hardware (DS / DSi / 3DS)
-Ensure you have the **latest version** of [TWiLight Menu++](https://wiki.ds-homebrew.com/twilightmenu/) with DLDI patching enabled.
-> Oldest confirmed working version is v2.15.0
+### melonDS (Android)
+> Android support is experimental. Some odd behaviour may occur throughout your gameplay.
+
+> Ensure that you use ```melonDualDS v0.7.0.rc3 Hotfix 2``` or newer.
+1. Download `persona-3-dual.nds` and `data.zip` from the latest release, & decompress `data.zip`
+2. In melonDS, go to **Settings → System** and disable JIT (```Enable JIT``` should be unchecked).
+3. In melonDS, go to **Settings → System** and enable ```DLDI / Homebrew SD```. Then, set the SD folder to your extracted ```data``` folder.
+
+Now, you can open melonDS and load the `persona-3-dual.nds` ROM!
+> **NOTE**: It will take a little bit of time to load into the main menu
+
+### Console (DS / DSi / 3DS)
+> Ensure you have the **latest version** of [TWiLight Menu++](https://wiki.ds-homebrew.com/twilightmenu/).
 
 1. Download `persona-3-dual.nds` and `data.zip` from the latest release, & decompress `data.zip`
 2. On your SD card, navigate to your `/roms/nds/` folder (or equivalent).
@@ -35,21 +50,24 @@ Ensure you have the **latest version** of [TWiLight Menu++](https://wiki.ds-home
        ├── video/
        └── ...
    ```
-4. In TWiLight Menu++ settings, ensure 
+4. **FLASHCART ONLY**: In  settings, ensure 
 - **DLDI access** is set to **ARM9** 
 - **Game Loader** is set to **nds-bootstrap**
-> If you don't see these options, navigate between different settings pages using L/R.
-> These should already be the default options anways.
-4. Launch the game through TWiLight Menu++ as normal.
+> If you don't see these options, navigate between different settings pages using L/R. These should already be the default options.
+5. Launch the game through TWiLight Menu++ as normal.
 
+*Example of correct settings on the flashcart version of TWiLight Menu++*
 <img src="/docs/imgs/install-game/dldi.jpg" alt="DLDI" width="400"/>
 <img src="/docs/imgs/install-game/bootstrap.jpg" alt="Bootstrap" width="400"/>
 
 ## FAQs
 ### Do you support melonDS on Android?
-Unfortunately, we haven't tested this ourselves, so we cannot provide support.
+We have **experimental** Android support. See above for more details.
 
-### I've launched the game on my game console & have gotten a save error!
+### (melonDS) Launching the game results in a white screen!
+Ensure that you have ```JIT``` turned off in settings (```Enable JIT``` should be unchecked).
+
+### (Console) I've launched the game on my game console & have gotten a save error!
 We've noticed that Windows will sometimes decompress the data.zip folder into *another* data folder. 
    ```
    data/

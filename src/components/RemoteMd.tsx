@@ -8,13 +8,21 @@ interface RemoteMdProps {
 // TODO: find a way to display/detect the headers for the table of contents sidebar
 // TODO: parse out the # H1 header (since it is duplicate to the title property)
 async function RemoteMd({ src }: RemoteMdProps) {
-    const response = await fetch(src);
-    const markdown = await response.text();
-    const content = marked.parse(markdown);
-
-    return (
-        <article dangerouslySetInnerHTML={{ __html: content }} />
-    )
+    try
+    {
+        const response = await fetch(src);
+        const markdown = await response.text();
+        const content = marked.parse(markdown);
+        return (
+            <article dangerouslySetInnerHTML={{ __html: content }} />
+        )
+    }
+    catch(error)
+    {
+        return (
+            <p>Cannot load document! Try reloading the page</p>
+        )
+    }
 }
 
 export default RemoteMd;

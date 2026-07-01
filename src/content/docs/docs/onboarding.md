@@ -4,9 +4,13 @@ title: Onboarding Guide
 Welcome to the Persona 3 Dual team! This guide will get you set up and oriented regardless of your role.
 
 ---
+## Team Application & Approval
+You need to apply & be approved to officaly join the team. Apply for the team [HERE](/docs/guides/team-application/)
+
+---
 
 ## Team Rules
-Read the document [HERE](/docs/guides/team-rules/)
+All team members need to read the team rules document [HERE](/docs/guides/team-rules/)
 
 ---
 

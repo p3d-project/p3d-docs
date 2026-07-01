@@ -1,6 +1,8 @@
 ---
 title: Dialogue
 ---
+> #### **NOTE**: This document will be deprecated in the near future. Some items may be outdated/incorrect
+
 ## Overview
 
 `dialogue_compiler.py` takes a `.dlg` script and produces a `.h` + `.cpp` pair

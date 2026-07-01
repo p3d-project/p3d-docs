@@ -36,6 +36,10 @@ If you cannot respect other people's decisions, then we will simply not have you
 
 If you can't respect these rules, then you're getting a few warnings, then kicked from the server if we see repeated intentional behaviour.
 
+## DM'ing people
+- Do **NOT** DM anyone except *@thebosst* when you need to get added to the Google Drive/GitHub
+    - This is a liability for us; keep convos in the lounges please
+
 ## Team Structure/Management
 
 thebosst has assigned certain people to be team leads. Team leads will need to do basically what the ***What does this mean for you?*** section says, but only for your team. This includes:
@@ -49,11 +53,16 @@ thebosst has assigned certain people to be team leads. Team leads will need to d
 
 Team leads will get the Admin privilege. Consequently, if you are currently an Admin & aren't a team lead, you will lose Admin privileges.
 
-thebosst has assigned the current team leads below, based on a combination of their experience, how long they've been with the team, & their work ethic (that thebosst has seen). Ultimately, being a team lead requires my approval.
+thebosst has assigned the current team leads below, based on a combination of their experience, how long they've been with the team, & their work ethic (that thebosst has seen). Ultimately, being a team lead requires thebosst's approval.
 
 #### Team Leads
 
-* Game Dev: @themoonwalker8692  
-* Art: @firulaisgg  
-* Video/Music: @pixelkat05  
-* Web Dev: @flamaniax (with @thebosst assistance while we still set this up)
+| Team     | Lead |
+|----------|------|
+| Game Dev | **@themoonwalker8692** |
+| Web Dev  | **@flamaniax** & **@thebosst** |
+| Graphics | **@firulaisgg** & **@invertstick** |
+| UX/UI    | *None* |
+| 3D       | **@pixelkat05** |
+| Music    | *None* |
+| Video    | **@pixelkat05** |

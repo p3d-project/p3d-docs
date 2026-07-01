@@ -1,5 +1,5 @@
 ---
-title: Art Team Reference
+title: Graphics Team Reference
 ---
 This document covers the technical constraints and workflows the P3D art team needs to be aware of when creating assets. Understanding the DS hardware limitations is essential. Assets that don't conform to these specs won't display correctly in-game.
 
@@ -120,18 +120,6 @@ Each channel (R, G, B) can only have **32 distinct values** (0–31) rather than
 - Always upload both the **exported asset** and the **editable source file** to Google Drive.
 - Link the Drive folder in the relevant GitHub issue when closing it.
 - Attach a viewable preview image directly to the issue as well.
-
----
-
-## Tools Quick Reference
-
-| Tool | Purpose |
-|---|---|
-| [Libresprite](https://libresprite.github.io/#!/) | Pixel art & sprite animation |
-| [Aseprite](https://www.aseprite.org) | Pixel art & sprite animation |
-| [GIMP](https://www.gimp.org) | General image editing, palette management |
-| [Blender](https://www.blender.org) | 3D modeling |
-| [Noesis](https://richwhitehouse.com/index.php?content=inc_projects.php&showproject=91) | Ripping & converting game assets |
 
 ---
 

@@ -41,6 +41,7 @@ export default defineConfig({
         label: 'Getting Started',
         items:
         [
+          'docs/guides/install-game',
           'docs/code-of-conduct',
           'docs/guides/social-media-guidelines',
           'docs/guides/roles',
@@ -91,10 +92,12 @@ export default defineConfig({
         label: 'References',
         items:
         [
-          'docs/references/art-reference',
-          'docs/references/dev-reference',
-          'docs/references/graphics-standards',
-          'docs/references/ripping-reference',
+          'docs/references/game-dev-team-reference',
+          'docs/references/web-dev-team-reference',
+          'docs/references/graphics-team-reference',
+          'docs/references/3d-team-reference',
+          'docs/references/art-standards',
+          'docs/references/art-portfolio',
         ]
       },
       { label: 'Credits', link: 'docs/guides/credits'}

@@ -1,35 +1,32 @@
 ---
 title: Roles
 ---
-This is a document to clearly indicate the different roles within the team, and what they do/are responsible for. Especially useful for promotional materials.
+This is a document to clearly indicate the different roles within the team, and what they do/are responsible for.
 
 ## Developer
-### Game developer
-* Responsible for the core game engine, programming gameplay mechanics, and systems implementation (C, C++, Python)
+### 🎮 Game Dev
+Experience with C/C++, Python? Wanna help build out the actual game? Well, hop aboard!
 
-### Web developer
-* Develops and maintains the game's promotional website and internal web-based tooling (Astro, React, Vue, Tailwind)
-
-### Web designer
-* Handles the UI/UX design for the game's website, creating wireframes and high-fidelity mockups (Figma)
+### 🧑‍💻 Web Dev
+Experience making websites? We want you! Help make the game's promotional/tools website
 
 ## Art
-### Graphic designer
-* Focuses on the visual identity of the UI, including menus, overlays, and HUD elements (Photoshop, Photopea, or GIMP)  
-* Creates pixel-based assets including character sprites, iconography, in-game text elements, and UI components (such as dialogue box elements) (Libresprite)  
-* Create animations for UI elements
+### 🎨 Graphics
+Experience with making cool assets? Sprites? Help make the game's graphics!
 
-### 3D modeler
-* Responsible for 3D asset creation and modification, including optimization, asset ripping/extraction, and adding engine-specific 3D objects (ex. billboards) (Blender)
+#### 🖌️ UX/UI
+Experience designing UX/UI? We'd love your design help for our game & the website!
+
+### 🧊 3D
+Experience with making 3D models! Hop on & help make environments & characters!
 
 ## Media
-### Video
-* Produces promotional trailers and development update videos  
-* Acquires, edits, and integrates cutscene video content for the game
+### 🎶 Music
+Experience with making cool tracks? We'd love your help with custom P3D tracks!
 
-### Music
-* Acquires, edits, or composes original music and sound effects tailored for the game environment
+### 🎥 Video 
+Experience with video creation? We'd love your help with promo/dev vids,  cutscenes, etc!
 
 ## QA
-### Tester
-* Responsible for rigorous testing of game builds, identifying and reporting bugs, tracking issues, and ensuring game stability across different gameplay scenarios
+### 🛠️ Tester
+Testers will help search for bugs/issues, especially before a milestone release!

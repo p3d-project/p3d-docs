@@ -1,5 +1,5 @@
 ---
-title: Dev Team Reference
+title: Game Dev Team Reference
 ---
 A collection of useful links and resources for development.
 
@@ -41,15 +41,6 @@ A collection of useful links and resources for development.
 |---|---|---|
 | **P3D Math Reference** | [Google Sheets](https://docs.google.com/spreadsheets/d/1f4Bhkg0gBqUSm4YR1Bba1JsQn6w6fPDrqBTaWlHla8A/edit?usp=drivesdk) | Spreadsheet covering math used in the project. |
 | **Fixed-Point Math (GBATEK)** | [problemkaputt.de/gbatek.htm#dsmath](https://problemkaputt.de/gbatek.htm#dsmath) | The DS has no floating-point unit - all math uses fixed-point integers. This section covers the hardware math accelerator registers. |
-
----
-
-## Tools
-
-| Resource | Link | Description |
-|---|---|---|
-| **devkitPro** | [devkitpro.org](https://devkitpro.org) | The toolchain that powers our build environment (devkitARM, libnds, grit, etc.). Check here for install docs and updates. |
-| **melonDS** | [melonds.kuribo64.net](https://melonds.kuribo64.net) | Recommended DS emulator for testing. Accurate hardware emulation and supports loading `.nds` files directly. |
 
 ---
 

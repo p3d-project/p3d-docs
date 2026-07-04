@@ -44,4 +44,4 @@ A collection of useful links and resources for development.
 
 ---
 
-*Missing a link? Drop it in the dev channel on Discord and we'll add it here.*
+*Missing a link? Drop it in the #game-dev-lounge channel on Discord and we'll add it here.*

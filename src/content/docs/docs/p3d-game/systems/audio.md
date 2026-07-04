@@ -3,13 +3,14 @@ title: Audio
 ---
 > #### **NOTE**: This document will be deprecated in the near future. Some items may be outdated/incorrect
 
-Audio is handled by `MusicController` (`source/controllers/MusicController.h`), a wrapper around **Maxmod** for SFX and a custom **PCM streaming** system for background music.
+Audio is handled by `MusicController` (`source/controllers/MusicController.h`), a wrapper around [**Maxmod**](https://maxmod.org/) for SFX and a custom **PCM streaming** system for background music.
 
 ---
 
 ## Music
 
 #### Format
+Maxmod supports MOD, S3M, XM, and IT, but the team is only using PCM formats at the moment.
 
 All music is stored as raw PCM in `data/music/`. Source files are `.mp3` in `assets/music/` and are converted automatically by the Makefile via FFmpeg:
 

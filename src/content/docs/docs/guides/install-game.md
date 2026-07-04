@@ -50,19 +50,23 @@ Now, you can open melonDS and load the `persona-3-dual.nds` ROM!
        ├── video/
        └── ...
    ```
-4. **FLASHCART ONLY**: In  settings, ensure 
+4. **TWiLight Menu++ on flashcart (R4-type gamecard)**: In  settings, ensure 
 - **DLDI access** is set to **ARM9** 
 - **Game Loader** is set to **nds-bootstrap**
 > If you don't see these options, navigate between different settings pages using L/R. These should already be the default options.
-5. Launch the game through TWiLight Menu++ as normal.
 
-*Example of correct settings on the flashcart version of TWiLight Menu++*
+5. **TWiLight Menu++ on firmware (DSi/3DS)**: In settings, ensure
+- TWiLight Menu++ is set to run in DSi mode
+
+6. Launch the game through TWiLight Menu++ as normal.
+
+*Example of correct settings for step 4, TWiLight Menu++ on flashcart (R4-type gamecard)*
 <img src="/docs/imgs/install-game/dldi.jpg" alt="DLDI" width="400"/>
 <img src="/docs/imgs/install-game/bootstrap.jpg" alt="Bootstrap" width="400"/>
 
 ## FAQs
 ### Do you support melonDS on Android?
-We have **experimental** Android support. See above for more details.
+We have **experimental** Android support. See [above](/docs/guides/install-game/#melonds-android) for more details.
 
 ### (melonDS) Launching the game results in a white screen!
 Ensure that you have ```JIT``` turned off in settings (```Enable JIT``` should be unchecked).
@@ -86,3 +90,6 @@ This is incorrect! Make sure you only have **one data folder**
    ```
 
 Also, make sure you are running the latest version of TWiLight Menu++ & have set the correct settings
+
+### (DSi/3DS) I cannot find DLDI settings!
+DLDI settings are only on flashcarts (R4-type game cards) running TWiLight Menu++. See [above](/docs/guides/install-game/#console-ds--dsi--3ds) for more details.

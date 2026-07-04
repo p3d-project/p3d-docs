@@ -1,8 +1,6 @@
 ---
-title: Q&A
+title: FAQs
 ---
-
-## Common Q\&As
 
 ### What about FEMC / The Answer / P4?
 

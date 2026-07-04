@@ -20,17 +20,9 @@ We use GitHub to track tasks and coordinate across all teams. **Everyone on the 
 We use Google Drive to save large files and other assorted documents. **The Team Google Drive is optional.**
 
 **Steps:**
-1. Create a [GitHub account](https://github.com) if you don't have one.
-2. Message **@thebosst** on Discord with:
-   - Your team/role
-   - Your GitHub username
-   - Your current task (if any)
-3. You'll receive an email invitation to join the org - accept it.
+1. Apply for the team & ensure you've put your GitHub (& optionally your Google Email address) in the application form
 
-> **Example message:**
-> `Hey! I just joined the Art team, and need access to the GitHub Organization & Google Drive. My GitHub username is [username]. My email is [insert-email-here]. I'm currently working on [task].`
-
-Once accepted, you'll have access to the [GitHub Organization](https://github.com/p3d-project), [Project Board](https://github.com/orgs/p3d-project/projects/1), and editing access to the [Google Drive](https://drive.google.com/drive/folders/1MS2eOnHn5RiMcLRfc8K1s2ZR8FcY3tgq?usp=drive_link)
+Once accepted into the team, you'll have access to the [GitHub Organization](https://github.com/p3d-project), [Project Board](https://github.com/orgs/p3d-project/projects/1), and editing access to the [Team Google Drive](https://drive.google.com/drive/folders/1MS2eOnHn5RiMcLRfc8K1s2ZR8FcY3tgq?usp=drive_link)
 
 ---
 
@@ -50,7 +42,7 @@ The project board is how we track progress across all teams.
 | In Progress | Actively being worked on |
 | In Review | Submitted, awaiting review |
 | Done | Completed |
-| Suspended | Paused, not actively exploring anymore |
+| Suspended/Blocked | Paused, not actively exploring at the moment |
 
 **Guidelines:**
 If you are working on a task (which must have an associated GitHub issue), you must:
@@ -77,10 +69,11 @@ Please use the *Bug report* or *Feature request* templates & add it to the *New*
 https://github.com/p3d-project/persona-3-dual
 
 As an overall rule, the team avoids using external libraries as much as possible. We want to build everything ourselves.
+> The one notably exception is the Maxmod audio library
 
 The team uses **Docker** as the official development environment. It wraps the entire toolchain into a single image so everyone gets an identical build environment regardless of OS.
 
-### Step 1 — Install Docker
+### 1. Install Docker
 
 | Platform | Instructions |
 |---|---|
@@ -92,14 +85,14 @@ Verify the install:
 docker --version
 ```
 
-### Step 2 — Clone the Repo
+### 2. Clone the Repo
 
 ```bash
 git clone https://github.com/p3d-project/persona-3-dual.git
 cd persona-3-dual
 ```
 
-### Step 3 — Set Up Code Formatting
+### 3. Set Up Code Formatting
 
 This project uses [pre-commit](https://pre-commit.com) to auto-format all source files before every commit. It handles C/C++ (clang-format), Python (black + ruff), and web files (prettier).
 
@@ -132,7 +125,7 @@ pre-commit run --all-files
 
 > **Windows note:** prettier requires Node.js. pre-commit downloads a local copy automatically the first time you run `pre-commit install` or `pre-commit run`.
 
-### Step 4 — Build the Docker Image
+### 4. Build the Docker Image
 
 Run this **once** (or again whenever `Dockerfile` or `tools/requirements.txt` changes):
 
@@ -142,7 +135,7 @@ docker build -t p3d-dev .
 
 > The first build takes a few minutes while devkitARM downloads. Subsequent builds use the Docker layer cache and are much faster.
 
-### Step 5 — Compile the ROM
+### 5. Compile the ROM
 
 ```bash
 # Linux / macOS
@@ -183,7 +176,7 @@ You'll be inside the container at `/project` (your repo). Type `exit` to leave.
 https://github.com/p3d-project/p3d-website
 The website is an [Astro](https://astro.build) project.
 
-### Step 1 — Install Dependencies
+### 1. Install Dependencies
 
 Ensure you have [Node.js](https://nodejs.org) installed, then:
 
@@ -191,7 +184,7 @@ Ensure you have [Node.js](https://nodejs.org) installed, then:
 npm install
 ```
 
-### Step 2 — Start the Dev Server
+### 2. Start the Dev Server
 
 ```bash
 npm run dev
@@ -199,7 +192,7 @@ npm run dev
 
 The site will be available at `http://localhost:4321` by default.
 
-### Step 3 — Build for Production
+### 3. Build for Production
 
 ```bash
 npm run build

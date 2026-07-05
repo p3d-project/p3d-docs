@@ -17,7 +17,7 @@ There are two categories of graphics on the DS: **backgrounds** and **sprites**.
 
 ## Backgrounds
 
-Each graphics engine supports up to **4 simultaneous backgrounds**, and each can cover the full 256×192 screen. We try to use only **1 background** per screen where possible to keep things simple and save VRAM.
+Each graphics engine supports up to **4 simultaneous backgrounds**, and each can cover the full 256×192 screen. P3D only supports **1 background** per screen due to how the current UIScreen system works. Any other elements are recommended to be sprites.
 
 Backgrounds are tile-based - they're composed of 8×8 pixel tiles assembled into a map. Keep this in mind when designing background art; elements should align to an 8×8 grid when practical.
 
@@ -66,22 +66,28 @@ This is why many of our source assets have a **pink/magenta background** - it's 
 
 > **When exporting assets:** Make sure your transparency color is in palette slot 0. In GIMP, you can control this directly in the indexed palette editor. In Aseprite/Libresprite, set your transparent color index to 0.
 
+
 ### Standard palette mode vs. Extended palettes
 
-| Mode | Sprites | Backgrounds |
-|---|---|---|
-| **Standard** | 1 shared palette of up to 256 colors | 1 shared palette of up to 256 colors |
-| **Extended** | Up to 16 palettes × 256 colors each | Up to 16 palettes × 256 colors each per layer |
+| Mode | Bit Depth | Sprites | Backgrounds |
+|---|---|---|---|
+| **Standard** | 4-bit | 16 palettes × 16 colors (16x16 grid) | 16 palettes × 16 colors (or 1 shared 256-color palette) |
+| **Extended** | 8-bit | Up to 16 palettes × 256 colors each | Up to 16 palettes × 256 colors each per layer |
 
-**Standard palette mode** is the default. All sprites share one global palette of up to 256 colors (or 16 palettes of 16 colors each). This is limiting if assets have very different color schemes.
+**Standard palette mode** is the default (4-bit color depth). While there are 256 colors available in memory, they are organized into a **16x16 grid** (16 palettes of 16 colors each). This is limiting if assets have very different color schemes, as each individual sprite is restricted to referencing just one of those 16-color palettes at a time.
 
-**Extended palette mode** gives each sprite its own palette slot (up to 16 palettes of 256 colors), which is much more flexible. P3D uses extended palettes for sprites. This means:
+**Extended palette mode** (8-bit color depth) gives each sprite its own full palette slot (up to 16 palettes of 256 colors), which is much more flexible.
 
-- Each individual sprite/asset can have up to **256 unique colors** drawn from the full DS color space.
-- You still need to index your image - you're just no longer constrained to sharing a single global palette with all other sprites.
-- You don't need to define a transparency colour
+P3D uses standards palettes (16x16) for sprites & backgrounds. This means:
+- Background & sprites have max 16 colours each
+    - Remember, transparency takes up 1 colour slot
+    - Gradients are really tough because of only 16 max colours
+- Each sprite/background can have its own unique 16-colour palette. It doesn't need to be universal
+- But, we can only have 16 unique palettes showing at once
+    - 16 colours x 16 palettes
+- Try to make sprites share palettes as much as possible
 
-When in doubt about which mode an asset is using, check with the dev team.
+When in doubt about which mode an asset is using, check with the Game Dev team.
 
 ---
 
@@ -114,8 +120,7 @@ Each channel (R, G, B) can only have **32 distinct values** (0–31) rather than
 | Sprites | Indexed PNG | Palette slot 0 = transparency color |
 | Tiled backgrounds | Indexed PNG | Align content to 8×8 grid |
 | Bitmap backgrounds | PNG (direct color) | Memory-heavy; avoid if possible |
-| Editable source files | `.xcf` (GIMP), `.aseprite` (Aseprite), `.ase` (Libresprite) | Upload to Google Drive alongside exports |
-> NOTE: If the colour palette is in extended mode, the assets don't need an explicit transparency color. Check with the dev team to confirm if your assets need a transparency colour or not.
+| Editable source files | .psd, etc. | Upload to Google Drive alongside exports |
 
 - Always upload both the **exported asset** and the **editable source file** to Google Drive.
 - Link the Drive folder in the relevant GitHub issue when closing it.

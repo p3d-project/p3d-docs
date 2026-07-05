@@ -17,7 +17,7 @@ There are two categories of graphics on the DS: **backgrounds** and **sprites**.
 
 ## Backgrounds
 
-Each graphics engine supports up to **4 simultaneous backgrounds**, and each can cover the full 256×192 screen. We try to use only **1 background** per screen where possible to keep things simple and save VRAM.
+Each graphics engine supports up to **4 simultaneous backgrounds**, and each can cover the full 256×192 screen. P3D only supports **1 background** per screen due to how the current UIScreen system works. Any other elements are recommended to be sprites.
 
 Backgrounds are tile-based - they're composed of 8×8 pixel tiles assembled into a map. Keep this in mind when designing background art; elements should align to an 8×8 grid when practical.
 
@@ -47,63 +47,69 @@ All sprite dimensions must be **multiples of 8 pixels** - this is a hardware req
 
 ## Indexed Images & Transparency
 
-Many DS assets need to be saved as **indexed (paletted) images** rather than full-color images. Here's why and when:
+Many DS assets need to be saved as **indexed (paletted) images** rather than full-colour images. Here's why and when:
 
 ### What is indexing?
 
-An indexed image doesn't store full color data per pixel. Instead, it stores a **palette** (a list of up to 256 colors), and each pixel holds an index number pointing to a color in that palette. This saves significant memory on hardware with limited VRAM.
+An indexed image doesn't store full colour data per pixel. Instead, it stores a **palette** (a list of up to 256 colours), and each pixel holds an index number pointing to a colour in that palette. This saves significant memory on hardware with limited VRAM.
 
 ### When does an asset need to be indexed?
 
 - **Always** for tiled graphics (sprites and tiled backgrounds) - the DS hardware requires it.
-- Bitmap backgrounds *can* use direct color, but this is memory-intensive and generally avoided.
+- Bitmap backgrounds *can* use direct colour, but this is memory-intensive and generally avoided.
 
-### The transparency color (Color 0)
+### The transparency colour (Index 0)
 
-In indexed mode, **palette index 0 is reserved for transparency**. Whatever color sits in slot 0 of the palette will be treated as fully transparent by the hardware.
+In indexed mode, **palette index 0 is reserved for transparency**. Whatever colour sits in slot 0 of the palette will be treated as fully transparent by the hardware.
 
-This is why many of our source assets have a **pink/magenta background** - it's a convention to use a color that's visually obvious and unlikely to appear in the actual artwork. When the asset is converted, that color is placed in palette slot 0 and becomes transparent in-game.
+This is why many of our source assets have a **pink/magenta background** - it's a convention to use a colour that's visually obvious and unlikely to appear in the actual artwork. When the asset is converted, that colour is placed in palette slot 0 and becomes transparent in-game.
 
-> **When exporting assets:** Make sure your transparency color is in palette slot 0. In GIMP, you can control this directly in the indexed palette editor. In Aseprite/Libresprite, set your transparent color index to 0.
+> **When exporting assets:** Make sure your transparency colour is in palette slot 0. In GIMP, you can control this directly in the indexed palette editor. In Aseprite/Libresprite, set your transparent colour index to 0.
+
 
 ### Standard palette mode vs. Extended palettes
 
-| Mode | Sprites | Backgrounds |
-|---|---|---|
-| **Standard** | 1 shared palette of up to 256 colors | 1 shared palette of up to 256 colors |
-| **Extended** | Up to 16 palettes × 256 colors each | Up to 16 palettes × 256 colors each per layer |
+| Mode | Bit Depth | Sprites | Backgrounds |
+|---|---|---|---|
+| **Standard** | 4-bit | 16 palettes × 16 colours (16x16 grid) | 16 palettes × 16 colours (or 1 shared 256-colour palette) |
+| **Extended** | 8-bit | Up to 16 palettes × 256 colours each | Up to 16 palettes × 256 colours each per layer |
 
-**Standard palette mode** is the default. All sprites share one global palette of up to 256 colors (or 16 palettes of 16 colors each). This is limiting if assets have very different color schemes.
+**Standard palette mode** is the default (4-bit colour depth). While there are 256 colours available in memory, they are organized into a **16x16 grid** (16 palettes of 16 colours each). This is limiting if assets have very different colour schemes, as each individual sprite is restricted to referencing just one of those 16-colour palettes at a time.
 
-**Extended palette mode** gives each sprite its own palette slot (up to 16 palettes of 256 colors), which is much more flexible. P3D uses extended palettes for sprites. This means:
+**Extended palette mode** (8-bit colour depth) gives each sprite its own full palette slot (up to 16 palettes of 256 colours), which is much more flexible.
 
-- Each individual sprite/asset can have up to **256 unique colors** drawn from the full DS color space.
-- You still need to index your image - you're just no longer constrained to sharing a single global palette with all other sprites.
-- You don't need to define a transparency colour
+P3D uses standards palettes (16x16) for sprites & backgrounds. This means:
+- Background & sprites have max 16 colours each
+    - Remember, transparency takes up 1 colour slot
+    - Gradients are really tough because of only 16 max colours
+- Each sprite/background can have its own unique 16-colour palette. It doesn't need to be universal
+- But, we can only have 16 unique palettes showing at once
+    - 16 colours x 16 palettes
+- Try to make sprites share palettes as much as possible
 
-When in doubt about which mode an asset is using, check with the dev team.
+When in doubt about which mode an asset is using, check with the Game Dev team.
 
 ---
 
-## DS Color
+## DS Colour
 
-The DS uses a **15-bit color format (BGR555)** - 5 bits per channel (red, green, blue), giving **32,768 possible colors**. This is less than the standard 24-bit "true color" used in most modern software.
+The DS uses a **15-bit colour format (BGR555)** - 5 bits per channel (red, green, blue), giving **32,768 possible colours**. This is less than the standard 24-bit "true colour" used in most modern software.
 
 ### What this means for you
 
-Any colors you pick in GIMP, or Aseprite/Libresprite will be **rounded down to the nearest DS-supported color** during conversion. You won't see this in your source files, but you will see it in-game or in the emulator.
+Any colours you pick in GIMP, or Aseprite/Libresprite will be **rounded down to the nearest DS-supported colour** during conversion. You won't see this in your source files, but you will see it in-game or in the emulator.
 
-Each channel (R, G, B) can only have **32 distinct values** (0–31) rather than 256. Colors that are close together in your source file may appear identical on hardware.
+Each channel (R, G, B) can only have **32 distinct values** (0–31) rather than 256. Colours that are close together in your source file may appear identical on hardware.
 
 ### Tips
 
-- Work in full 24-bit color as normal in your source files - the conversion tools handle downsampling automatically.
-- Avoid subtle gradients with many similar colors; they may collapse into flat bands on hardware.
+- Work in full 24-bit colour as normal in your source files - the conversion tools handle downsampling automatically.
+- Avoid subtle gradients with many similar colours; they may collapse into flat bands on hardware.
 - When previewing how an asset will look on DS, save it as a 16-bit BMP and reload it, or test directly in the emulator.
 
-### DS Color Palette
+### DS Colour Palette
 
-![DS supported color palette](/docs/imgs/art-reference/ds-color-palette.png)
+![DS supported colour palette](/docs/imgs/art-reference/ds-colour-palette.png)
 
 ---
 
@@ -111,11 +117,10 @@ Each channel (R, G, B) can only have **32 distinct values** (0–31) rather than
 
 | Asset type | Format | Notes |
 |---|---|---|
-| Sprites | Indexed PNG | Palette slot 0 = transparency color |
+| Sprites | Indexed PNG | Palette slot 0 = transparency colour |
 | Tiled backgrounds | Indexed PNG | Align content to 8×8 grid |
-| Bitmap backgrounds | PNG (direct color) | Memory-heavy; avoid if possible |
-| Editable source files | `.xcf` (GIMP), `.aseprite` (Aseprite), `.ase` (Libresprite) | Upload to Google Drive alongside exports |
-> NOTE: If the colour palette is in extended mode, the assets don't need an explicit transparency color. Check with the dev team to confirm if your assets need a transparency colour or not.
+| Bitmap backgrounds | PNG (direct colour) | Memory-heavy; avoid if possible |
+| Editable source files | .psd, etc. | Upload to Google Drive alongside exports |
 
 - Always upload both the **exported asset** and the **editable source file** to Google Drive.
 - Link the Drive folder in the relevant GitHub issue when closing it.

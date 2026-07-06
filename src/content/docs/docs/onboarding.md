@@ -57,7 +57,7 @@ If you are working on a task (which must have an associated GitHub issue), you m
 ### Creating a New Issue
 **Want to add a new issue**? 
 Please use the *Bug report* or *Feature request* templates & add it to the *New* column on the project board. Once the associated team lead sees the issue & agrees, they will move it out of *New*.
-   - Ensure that you **select the correct repo**. Don't know what repo to select? Select the (default) ```p3d-project/persona-3-dual`` repo. 
+   - Ensure that you **select the correct repo**. Don't know what repo to select? Select the (default) ```p3d-project/persona-3-dual``` repo. 
    - We put new issues under *New* for a few reasons. It alerts the team leads of new issues; We can ensure the quality of the issue; We can ensure that there isn't a duplicate issue.
 
 ![Create issue](/docs/imgs/onboarding/create-issue.png)
@@ -71,28 +71,35 @@ https://github.com/p3d-project/persona-3-dual
 As an overall rule, the team avoids using external libraries as much as possible. We want to build everything ourselves.
 > The one notably exception is the Maxmod audio library
 
-The team uses **Docker** as the official development environment. It wraps the entire toolchain into a single image so everyone gets an identical build environment regardless of OS.
+The team uses **melonDS** for testing, **VS Code** as the development IDE, & **Docker** as the development environment.
 
-### 1. Install Docker
+### Prerequisites
+You need to have [melonDS](https://melonds.kuribo64.net/), [VS Code](https://code.visualstudio.com/), & [Docker](https://www.docker.com/) already installed on your system.
 
-| Platform | Instructions |
-|---|---|
-| Windows / macOS | [Docker Desktop](https://www.docker.com/products/docker-desktop/) |
-| Linux (Ubuntu/Debian) | [Docker's install guide](https://docs.docker.com/desktop/setup/install/linux/) |
+#### melonDS
+- Go to ```Config → Emu settings → Devtools```
+- Ensure ```Enable GBD stub``` is checked
+- Ensure the ARM9 port is ```2345``` & ```Break on startup``` is checked
+> When debugging, ensure that melonDS is already launched
 
-Verify the install:
-```bash
-docker --version
-```
+![melonDS debug setup](/docs/imgs/onboarding/melonds-debug.png)
 
-### 2. Clone the Repo
+#### VS Code
+- Ensure that the ```Dev Containers``` extension is installed
+![Dev Containers extension](/docs/imgs/onboarding/extension.png)
+
+#### Docker
+- Ensure that Docker is launched & running
+> Docker needs to be running whenever you want to code
+
+### 1. Clone the Repo
 
 ```bash
 git clone https://github.com/p3d-project/persona-3-dual.git
 cd persona-3-dual
 ```
 
-### 3. Set Up Code Formatting
+### 2. Set Up Code Formatting
 
 This project uses [pre-commit](https://pre-commit.com) to auto-format all source files before every commit. It handles C/C++ (clang-format), Python (black + ruff), and web files (prettier).
 
@@ -125,50 +132,23 @@ pre-commit run --all-files
 
 > **Windows note:** prettier requires Node.js. pre-commit downloads a local copy automatically the first time you run `pre-commit install` or `pre-commit run`.
 
-### 4. Build the Docker Image
+### 3. Open the repo in VS Code
+Open the persona-3-dual repo in VS Code. Then, click the bottom left ```><``` icon & select ```Reopen in Container```
+> You may also see a notification on the bottom right to ```Reopen in Container```. This method also works!
+![Launch container](/docs/imgs/onboarding/dev-container.png)
+If this is your first time launching the container, it may take a few minutes for Docker to install the image. Otherwise, VS Code should re-launch within a few seconds.
 
-Run this **once** (or again whenever `Dockerfile` or `tools/requirements.txt` changes):
+You are now ready to code!
 
-```bash
-docker build -t p3d-dev .
-```
+### Debugging
+> Ensure melonDS is already launched & awaiting the debugger
+1. Build in debug mode (you can use the ```make debug``` task or just open a terminal inside the container and run ```make DEBUG=1```)
+2. In VS Code, go to the ```Run and Debug``` tab on the left panel, and select ```[Docker] (gdb) Connect to melonDS```
+![VS Code debug tab](/docs/imgs/onboarding/vscode-debug.png)
 
-> The first build takes a few minutes while devkitARM downloads. Subsequent builds use the Docker layer cache and are much faster.
+You are now ready to debug!
 
-### 5. Compile the ROM
 
-```bash
-# Linux / macOS
-docker run --rm -v "$(pwd)":/project p3d-dev make
-
-# Windows (PowerShell)
-docker run --rm -v "${PWD}:/project" p3d-dev make
-```
-
-This produces `persona-3-dual.nds` and `sdcard.img` in your repo folder.
-
-### Optional — Interactive Shell
-
-If you want to run commands manually or debug the build:
-
-```bash
-# Linux / macOS
-docker run --rm -it -v "$(pwd)":/project p3d-dev
-
-# Windows (PowerShell)
-docker run --rm -it -v "${PWD}:/project" p3d-dev
-```
-
-You'll be inside the container at `/project` (your repo). Type `exit` to leave.
-
-### Useful Docker Commands
-
-| Command | What it does |
-|---|---|
-| `docker build -t p3d-dev .` | (Re)build the dev image |
-| `docker images` | List images on your machine |
-| `docker rmi p3d-dev` | Delete the image (frees disk space) |
-| `docker ps` | List running containers |
 
 ---
 
@@ -176,15 +156,27 @@ You'll be inside the container at `/project` (your repo). Type `exit` to leave.
 https://github.com/p3d-project/p3d-website
 The website is an [Astro](https://astro.build) project.
 
-### 1. Install Dependencies
+The team uses **VS Code** as the development IDE, & **Node.js**.
 
-Ensure you have [Node.js](https://nodejs.org) installed, then:
+### Prerequisites
+You need to have [Node.js](https://nodejs.org), & [VS Code](https://code.visualstudio.com/) already installed on your system.
+
+### 1. Clone the Repo
+
+```bash
+git clone https://github.com/p3d-project/p3d-website.git
+cd p3d-website
+```
+
+### 2 Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 2. Start the Dev Server
+### 3. Run the site
+
+#### Build for development
 
 ```bash
 npm run dev
@@ -192,11 +184,13 @@ npm run dev
 
 The site will be available at `http://localhost:4321` by default.
 
-### 3. Build for Production
+#### Build for production
 
 ```bash
 npm run build
 ```
+
+You are now ready to code!
 
 ---
 

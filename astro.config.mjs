@@ -95,7 +95,9 @@ export default defineConfig({
           'docs/references/game-dev-team-reference',
           'docs/references/web-dev-team-reference',
           'docs/references/graphics-team-reference',
+          'docs/references/ux-ui-team-reference',
           'docs/references/3d-team-reference',
+          'docs/references/music-team-reference',
           'docs/references/art-standards',
           'docs/references/art-portfolio',
         ]

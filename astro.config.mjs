@@ -4,9 +4,9 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import tailwindcss from '@tailwindcss/vite';
 
-import mdx from '@astrojs/mdx';
-
+import markdoc from '@astrojs/markdoc';
 import react from '@astrojs/react';
+import keystatic from '@keystatic/astro';
 
 // https://astro.build/config
 // See https://docs.astro.build/en/guides/deploy/github/
@@ -104,7 +104,7 @@ export default defineConfig({
       },
       { label: 'Credits', link: 'docs/guides/credits'}
     ],
-  }), mdx(), react()],
+  }), react(), markdoc(), keystatic()],
 
   vite: {
     plugins: [tailwindcss()],

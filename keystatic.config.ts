@@ -7,6 +7,7 @@ import {
 } from '@keystatic/core';
 import {
   block,
+  inline,
   type ContentComponent,
 } from '@keystatic/core/content-components';
 
@@ -25,6 +26,14 @@ const baseComponents = {
     label: 'Remote Markdown',
     schema: {
       src: fields.url({ label: 'Source' }),
+    },
+  }),
+  SizedImage: inline({
+    label: 'Sized Image',
+    schema: {
+      src: fields.url({ label: 'Source' }),
+      alt: fields.text({ label: 'Alt Text' }),
+      width: fields.number({ label: 'Width' }),
     },
   }),
 } satisfies Record<string, ContentComponent>;

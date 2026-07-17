@@ -16,9 +16,6 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Docs',
-      logo: {
-        src: './src/assets/logo.png',
-      },
       // https://starlight.astro.build/reference/icons/
       social: [
         {
@@ -33,6 +30,9 @@ export default defineConfig({
         },
       ],
       customCss: ['./src/styles/starlight.css'],
+      components: {
+        SiteTitle: './src/components/SiteTitle.astro',
+      },
       sidebar: [
         { label: 'Home', link: '/' },
         { label: 'Roadmap', link: 'docs/roadmap' },

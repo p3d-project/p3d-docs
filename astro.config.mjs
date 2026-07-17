@@ -1,17 +1,18 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-import starlight from '@astrojs/starlight';
-import tailwindcss from '@tailwindcss/vite';
-
+import cloudflare from '@astrojs/cloudflare';
 import markdoc from '@astrojs/markdoc';
 import react from '@astrojs/react';
+import starlight from '@astrojs/starlight';
 import keystatic from '@keystatic/astro';
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 // See https://docs.astro.build/en/guides/deploy/github/
 // See https://starlight.astro.build/getting-started/
 export default defineConfig({
+  adapter: cloudflare(),
   site: 'https://p3dual.com',
   integrations: [
     starlight({
@@ -32,6 +33,12 @@ export default defineConfig({
       customCss: ['./src/styles/starlight.css'],
       components: {
         SiteTitle: './src/components/SiteTitle.astro',
+      },
+      expressiveCode: {
+        shiki: {
+          // workerd not liking webassembly
+          engine: 'javascript',
+        },
       },
       sidebar: [
         { label: 'Home', link: '/' },
@@ -67,8 +74,11 @@ export default defineConfig({
     markdoc(),
     keystatic(),
   ],
-
   vite: {
     plugins: [tailwindcss()],
+    // https://github.com/expressive-code/expressive-code/issues/439
+    optimizeDeps: {
+      include: ['astro-expressive-code'],
+    },
   },
 });

@@ -74,7 +74,7 @@ export default config({
     kind: 'github',
     repo: {
       owner: 'p3d-project',
-      name: 'p3d-website',
+      name: 'p3d-docs',
     },
   },
   singletons: {

@@ -92,10 +92,10 @@ export default config({
     }),
   },
   collections: {
-    getting_started: collection({
-      label: 'Getting Started',
+    guides: collection({
+      label: 'Guides',
       slugField: 'title',
-      path: 'src/content/docs/docs/getting-started/**',
+      path: 'src/content/docs/docs/guides/**',
       format: { contentField: 'content' },
       schema: collectionSchema,
     }),

@@ -37,8 +37,8 @@ export default defineConfig({
         { label: 'Home', link: '/' },
         { label: 'Roadmap', link: 'docs/roadmap' },
         {
-          label: 'Getting Started',
-          items: [{ autogenerate: { directory: 'docs/getting-started' } }],
+          label: 'Guides',
+          items: [{ autogenerate: { directory: 'docs/guides' } }],
         },
         {
           label: 'Milestones',

@@ -13,7 +13,7 @@ import tailwindcss from '@tailwindcss/vite';
 // See https://starlight.astro.build/getting-started/
 export default defineConfig({
   adapter: cloudflare(),
-  site: 'https://p3dual.com',
+  site: 'https://docs.p3dual.com',
   integrations: [
     starlight({
       title: 'Docs',
@@ -42,32 +42,32 @@ export default defineConfig({
       },
       sidebar: [
         { label: 'Home', link: '/' },
-        { label: 'Roadmap', link: 'docs/roadmap' },
+        { label: 'Roadmap', link: 'roadmap' },
         {
           label: 'Guides',
-          items: [{ autogenerate: { directory: 'docs/guides' } }],
+          items: [{ autogenerate: { directory: 'guides' } }],
         },
         {
           label: 'Milestones',
-          items: [{ autogenerate: { directory: 'docs/milestones' } }],
+          items: [{ autogenerate: { directory: 'milestones' } }],
         },
         {
           label: 'P3D-Amicitia',
-          items: [{ autogenerate: { directory: 'docs/p3d-amicitia' } }],
+          items: [{ autogenerate: { directory: 'p3d-amicitia' } }],
         },
         {
           label: 'P3D-Game',
-          items: [{ autogenerate: { directory: 'docs/p3d-game' } }],
+          items: [{ autogenerate: { directory: 'p3d-game' } }],
         },
         {
           label: 'P3D-Website',
-          items: [{ autogenerate: { directory: 'docs/p3d-website' } }],
+          items: [{ autogenerate: { directory: 'p3d-website' } }],
         },
         {
           label: 'References',
-          items: [{ autogenerate: { directory: 'docs/references' } }],
+          items: [{ autogenerate: { directory: 'references' } }],
         },
-        { label: 'Credits', link: 'docs/credits' },
+        { label: 'Credits', link: 'credits' },
       ],
     }),
     react(),

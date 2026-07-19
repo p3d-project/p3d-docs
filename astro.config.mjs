@@ -1,18 +1,19 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-import starlight from '@astrojs/starlight';
-import tailwindcss from '@tailwindcss/vite';
-
+import cloudflare from '@astrojs/cloudflare';
 import markdoc from '@astrojs/markdoc';
 import react from '@astrojs/react';
+import starlight from '@astrojs/starlight';
 import keystatic from '@keystatic/astro';
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 // See https://docs.astro.build/en/guides/deploy/github/
 // See https://starlight.astro.build/getting-started/
 export default defineConfig({
-  site: 'https://p3dual.com',
+  adapter: cloudflare(),
+  site: 'https://docs.p3dual.com',
   integrations: [
     starlight({
       title: 'Docs',
@@ -33,42 +34,51 @@ export default defineConfig({
       components: {
         SiteTitle: './src/components/SiteTitle.astro',
       },
+      expressiveCode: {
+        shiki: {
+          // workerd not liking webassembly
+          engine: 'javascript',
+        },
+      },
       sidebar: [
         { label: 'Home', link: '/' },
-        { label: 'Roadmap', link: 'docs/roadmap' },
+        { label: 'Roadmap', link: 'roadmap' },
         {
           label: 'Guides',
-          items: [{ autogenerate: { directory: 'docs/guides' } }],
+          items: [{ autogenerate: { directory: 'guides' } }],
         },
         {
           label: 'Milestones',
-          items: [{ autogenerate: { directory: 'docs/milestones' } }],
+          items: [{ autogenerate: { directory: 'milestones' } }],
         },
         {
           label: 'P3D-Amicitia',
-          items: [{ autogenerate: { directory: 'docs/p3d-amicitia' } }],
+          items: [{ autogenerate: { directory: 'p3d-amicitia' } }],
         },
         {
           label: 'P3D-Game',
-          items: [{ autogenerate: { directory: 'docs/p3d-game' } }],
+          items: [{ autogenerate: { directory: 'p3d-game' } }],
         },
         {
           label: 'P3D-Website',
-          items: [{ autogenerate: { directory: 'docs/p3d-website' } }],
+          items: [{ autogenerate: { directory: 'p3d-website' } }],
         },
         {
           label: 'References',
-          items: [{ autogenerate: { directory: 'docs/references' } }],
+          items: [{ autogenerate: { directory: 'references' } }],
         },
-        { label: 'Credits', link: 'docs/credits' },
+        { label: 'Credits', link: 'credits' },
       ],
     }),
     react(),
     markdoc(),
     keystatic(),
   ],
-
   vite: {
     plugins: [tailwindcss()],
+    // https://github.com/expressive-code/expressive-code/issues/439
+    optimizeDeps: {
+      include: ['astro-expressive-code'],
+    },
   },
 });

@@ -2,7 +2,7 @@ name: Discord Notification
 
 on:
   workflow_run:
-    workflows: ["Deploy to GitHub Pages"]
+    workflows: ["Deploy Worker"]
     types: [completed]
 
   # Fires when a PR is opened, closed, or reopened.

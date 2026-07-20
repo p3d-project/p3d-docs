@@ -12,6 +12,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "pretty": "prettier . --write",
+    "pretty:staged": "pretty-quick",
     "pretty:check": "prettier . --check"
   },
   "dependencies": {
@@ -39,6 +40,7 @@
     "prettier": "3.9.5",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.8.1",
+    "pretty-quick": "4.2.2",
     "typescript": "6.0.3",
     "wrangler": "4.112.0"
   },

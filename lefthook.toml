@@ -1,7 +1,7 @@
 "$schema" = "https://raw.githubusercontent.com/evilmartians/lefthook/refs/tags/v2.1.10/schema.json"
 
 [pre-commit.commands.pretty]
-run = "npm run pretty"
+run = "npm run pretty:staged"
 stage_fixed = true
 
 [pre-push.commands.astro-check]

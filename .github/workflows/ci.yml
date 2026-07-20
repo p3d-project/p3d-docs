@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  astro-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v7
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run check
+        run: npm run check
+
+  pretty-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v7
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run check
+        run: npm run pretty:check

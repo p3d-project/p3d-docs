@@ -1,6 +1,8 @@
---- a/dist/keystatic-astro-api.js	
-+++ b/dist/keystatic-astro-api.js	
-@@ -1,22 +1,15 @@
+diff --git a/dist/keystatic-astro-api.js b/dist/keystatic-astro-api.js
+index 80131fee419d290a8d6c992d5bfcc355b9d39871..99e7ce90ae94ab98b99a01f161c07e4bbd2d083f 100644
+--- a/dist/keystatic-astro-api.js
++++ b/dist/keystatic-astro-api.js
+@@ -1,21 +1,14 @@
  import { makeGenericAPIRouteHandler } from '@keystatic/core/api/generic';
 +import { env as envVarsForCf } from 'cloudflare:workers';
  import { parseString } from 'set-cookie-parser';
@@ -26,4 +28,3 @@
      }, {
        slugEnvName: 'PUBLIC_KEYSTATIC_GITHUB_APP_SLUG'
      });
-     const {

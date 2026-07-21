@@ -1,6 +1,6 @@
 "$schema" = "./node_modules/wrangler/config-schema.json"
 compatibility_date = "2026-07-17"
-compatibility_flags = [ "global_fetch_strictly_public", "nodejs_compat" ]
+compatibility_flags = ["global_fetch_strictly_public", "nodejs_compat"]
 name = "p3d-docs"
 main = "@astrojs/cloudflare/entrypoints/server"
 
@@ -10,3 +10,10 @@ binding = "ASSETS"
 
 [observability]
 enabled = true
+
+[secrets]
+required = [
+    "KEYSTATIC_GITHUB_CLIENT_ID",
+    "KEYSTATIC_GITHUB_CLIENT_SECRET",
+    "KEYSTATIC_SECRET",
+]

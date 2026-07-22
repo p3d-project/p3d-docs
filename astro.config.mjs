@@ -78,7 +78,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
     // https://github.com/expressive-code/expressive-code/issues/439
     optimizeDeps: {
-      include: ['astro-expressive-code'],
+      include: ['@astrojs/starlight>astro-expressive-code'],
     },
   },
 });

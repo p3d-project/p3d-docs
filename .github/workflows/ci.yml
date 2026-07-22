@@ -16,8 +16,10 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v7
 
-      - name: Install dependencies
-        run: pnpm ci
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          run_install: true
 
       - name: Run check
         run: pnpm run check
@@ -31,8 +33,10 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v7
 
-      - name: Install dependencies
-        run: pnpm ci
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          run_install: true
 
       - name: Run check
         run: pnpm run pretty:check

@@ -1,16 +1,20 @@
 ---
 title: Onboarding Guide
+tableOfContents: true
 ---
 Welcome to the Persona 3 Dual team! This guide will get you set up and oriented regardless of your role.
 
 ---
+
 ## Team Application & Approval
-You need to apply & be approved to officaly join the team. Apply for the team [HERE](/docs/guides/team-application/)
+
+You need to apply & be approved to officaly join the team. Apply for the team [HERE](https://docs.p3dual.com/guides/team-application/)
 
 ---
 
 ## Team Rules
-All team members need to read the team rules document [HERE](/docs/guides/team-rules/)
+
+All team members need to read the team rules document [HERE](https://docs.p3dual.com/guides/team-rules/)
 
 ---
 
@@ -20,6 +24,7 @@ We use GitHub to track tasks and coordinate across all teams. **Everyone on the 
 We use Google Drive to save large files and other assorted documents. **The Team Google Drive is optional.**
 
 **Steps:**
+
 1. Apply for the team & ensure you've put your GitHub (& optionally your Google Email address) in the application form
 
 Once accepted into the team, you'll have access to the [GitHub Organization](https://github.com/p3d-project), [Project Board](https://github.com/orgs/p3d-project/projects/1), and editing access to the [Team Google Drive](https://drive.google.com/drive/folders/1MS2eOnHn5RiMcLRfc8K1s2ZR8FcY3tgq?usp=drive_link)
@@ -33,32 +38,54 @@ The project board is how we track progress across all teams.
 ![Project board overview](/docs/imgs/onboarding/project-board-overview.png)
 
 **Columns:**
-| Column | Meaning |
-|---|---|
-| New | New issue, needs to be reviewed & approved by team leads |
-| Backlog | Not yet started, no current priority |
-| Next Milestone | Targeted for the upcoming milestone |
-| Ready | Current milestone, ready to be picked up |
-| In Progress | Actively being worked on |
-| In Review | Submitted, awaiting review |
-| Done | Completed |
-| Suspended/Blocked | Paused, not actively exploring at the moment |
+
+{% table %}
+- Column
+- Meaning
+---
+- New
+- New issue, needs to be reviewed & approved by team leads
+---
+- Backlog
+- Not yet started, no current priority
+---
+- Next Milestone
+- Targeted for the upcoming milestone
+---
+- Ready
+- Current milestone, ready to be picked up
+---
+- In Progress
+- Actively being worked on
+---
+- In Review
+- Submitted, awaiting review
+---
+- Done
+- Completed
+---
+- Suspended/Blocked
+- Paused, not actively exploring at the moment
+{% /table %}
 
 **Guidelines:**
 If you are working on a task (which must have an associated GitHub issue), you must:
+
 - Drag your issue to **In Progress** when you start, and **Done** when finished.
 - **Assign yourself** to any issue you're working on.
 - **Comment regularly** on your issue to keep the team updated on progress.
-   - No comment = we don't know whats going on, and the *task will be unassigned* from you
+  - No comment = we don't know whats going on, and the *task will be unassigned* from you
 - You can filter by label (e.g. `graphics`, `bug`, `development`, `polish`) or milestone.
 
 ![Filtering by label](/docs/imgs/onboarding/project-board-filter.png)
 
 ### Creating a New Issue
-**Want to add a new issue**? 
+
+**Want to add a new issue**?
 Please use the *Bug report* or *Feature request* templates & add it to the *New* column on the project board. Once the associated team lead sees the issue & agrees, they will move it out of *New*.
-   - Ensure that you **select the correct repo**. Don't know what repo to select? Select the (default) ```p3d-project/persona-3-dual``` repo. 
-   - We put new issues under *New* for a few reasons. It alerts the team leads of new issues; We can ensure the quality of the issue; We can ensure that there isn't a duplicate issue.
+
+- Ensure that you **select the correct repo**. Don't know what repo to select? Select the (default) `p3d-project/persona-3-dual` repo.
+- We put new issues under *New* for a few reasons. It alerts the team leads of new issues; We can ensure the quality of the issue; We can ensure that there isn't a duplicate issue.
 
 ![Create issue](/docs/imgs/onboarding/create-issue.png)
 ![Example issue](/docs/imgs/onboarding/issue-example.png)
@@ -66,30 +93,38 @@ Please use the *Bug report* or *Feature request* templates & add it to the *New*
 ---
 
 ## Game Dev Team Setup
+
 https://github.com/p3d-project/persona-3-dual
 
 As an overall rule, the team avoids using external libraries as much as possible. We want to build everything ourselves.
+
 > The one notably exception is the Maxmod audio library
 
 The team uses **melonDS** for testing, **VS Code** as the development IDE, & **Docker** as the development environment.
 
 ### Prerequisites
+
 You need to have [melonDS](https://melonds.kuribo64.net/), [VS Code](https://code.visualstudio.com/), & [Docker](https://www.docker.com/) already installed on your system.
 
 #### melonDS
-- Go to ```Config → Emu settings → Devtools```
-- Ensure ```Enable GBD stub``` is checked
-- Ensure the ARM9 port is ```2345``` & ```Break on startup``` is checked
+
+- Go to `Config → Emu settings → Devtools`
+- Ensure `Enable GBD stub` is checked
+- Ensure the ARM9 port is `2345` & `Break on startup` is checked
+
 > When debugging, ensure that melonDS is already launched
 
 ![melonDS debug setup](/docs/imgs/onboarding/melonds-debug.png)
 
 #### VS Code
-- Ensure that the ```Dev Containers``` extension is installed
-![Dev Containers extension](/docs/imgs/onboarding/extension.png)
+
+- Ensure that the `Dev Containers` extension is installed
+  ![Dev Containers extension](/docs/imgs/onboarding/extension.png)
 
 #### Docker
+
 - Ensure that Docker is launched & running
+
 > Docker needs to be running whenever you want to code
 
 ### 1. Clone the Repo
@@ -114,6 +149,7 @@ pip install pre-commit
 ```
 
 Register the hooks:
+
 ```bash
 pre-commit install
 ```
@@ -133,32 +169,36 @@ pre-commit run --all-files
 > **Windows note:** prettier requires Node.js. pre-commit downloads a local copy automatically the first time you run `pre-commit install` or `pre-commit run`.
 
 ### 3. Open the repo in VS Code
-Open the persona-3-dual repo in VS Code. Then, click the bottom left ```><``` icon & select ```Reopen in Container```
-> You may also see a notification on the bottom right to ```Reopen in Container```. This method also works!
+
+Open the persona-3-dual repo in VS Code. Then, click the bottom left `><` icon & select `Reopen in Container`
+
+> You may also see a notification on the bottom right to `Reopen in Container`. This method also works!
 ![Launch container](/docs/imgs/onboarding/dev-container.png)
 If this is your first time launching the container, it may take a few minutes for Docker to install the image. Otherwise, VS Code should re-launch within a few seconds.
 
 You are now ready to code!
 
 ### Debugging
+
 > Ensure melonDS is already launched & awaiting the debugger
-1. Build in debug mode (you can use the ```make debug``` task or just open a terminal inside the container and run ```make DEBUG=1```)
-2. In VS Code, go to the ```Run and Debug``` tab on the left panel, and select ```[Docker] (gdb) Connect to melonDS```
-![VS Code debug tab](/docs/imgs/onboarding/vscode-debug.png)
+
+1. Build in debug mode (you can use the `make debug` task or just open a terminal inside the container and run `make DEBUG=1`)
+1. In VS Code, go to the `Run and Debug` tab on the left panel, and select `[Docker] (gdb) Connect to melonDS`
+   ![VS Code debug tab](/docs/imgs/onboarding/vscode-debug.png)
 
 You are now ready to debug!
-
-
 
 ---
 
 ## Web Dev Team Setup
+
 https://github.com/p3d-project/p3d-website
 The website is an [Astro](https://astro.build) project.
 
 The team uses **VS Code** as the development IDE, & **Node.js**.
 
 ### Prerequisites
+
 You need to have [Node.js](https://nodejs.org), & [VS Code](https://code.visualstudio.com/) already installed on your system.
 
 ### 1. Clone the Repo
@@ -195,7 +235,9 @@ You are now ready to code!
 ---
 
 ## Graphics Team Setup
+
 ### Workflow
+
 - **Upload all completed assets and their editable source files to the Team Google Drive [Graphics Folder](https://drive.google.com/drive/folders/1MS2eOnHn5RiMcLRfc8K1s2ZR8FcY3tgq?usp=sharing).**
 - Track your work on the project board. Move issues through the columns as you progress.
 - When uploading assets and closing an issue, leave a comment on the related issue with a link to the Drive folder, and upload viewable images to the issue.
@@ -203,7 +245,9 @@ You are now ready to code!
 ---
 
 ## UX/UI Team Setup
+
 ### Workflow
+
 - **Upload all completed assets and their editable source files to the Team Google Drive [UX/UI Folder](https://drive.google.com/drive/folders/1NU6uU6YxzGKnnmSKPJLesKwnWe7O5gmR?usp=drive_link).**
 - Track your work on the project board. Move issues through the columns as you progress.
 - When uploading assets and closing an issue, leave a comment on the related issue with a link to the Drive folder, and upload viewable images to the issue.
@@ -211,7 +255,9 @@ You are now ready to code!
 ---
 
 ## 3D Team Setup
+
 ### Workflow
+
 - **Upload all completed assets and their editable source files to the Team Google Drive [3D Folder](https://drive.google.com/drive/folders/1FAb7dC2GPEaNTfF5tSxioYkLp6wkU7tT?usp=drive_link).**
 - Track your work on the project board. Move issues through the columns as you progress.
 - When uploading assets and closing an issue, leave a comment on the related issue with a link to the Drive folder, and upload viewable images to the issue.
@@ -219,7 +265,9 @@ You are now ready to code!
 ---
 
 ## Music Team Setup
+
 ### Workflow
+
 - **Upload all completed assets and their editable source files to the Team Google Drive [Music Folder](https://drive.google.com/drive/folders/1suMTqGlqu1NUYZJ7DqjVpWIshWF2ZbXA?usp=drive_link).**
 - Track your work on the project board. Move issues through the columns as you progress.
 - When uploading assets and closing an issue, leave a comment on the related issue with a link to the Drive folder, and upload viewable images to the issue.
@@ -227,7 +275,9 @@ You are now ready to code!
 ---
 
 ## Video Team Setup
+
 ### Workflow
+
 - **Upload all completed assets and their editable source files to the Team Google Drive [Video Folder](https://drive.google.com/drive/folders/1AFeO9BUEUAk4rjtS9qVomzTrRqkwQMvz?usp=drive_link).**
 - Track your work on the project board. Move issues through the columns as you progress.
 - When uploading assets and closing an issue, leave a comment on the related issue with a link to the Drive folder, and upload viewable images to the issue.

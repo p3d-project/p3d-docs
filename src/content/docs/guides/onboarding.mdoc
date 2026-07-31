@@ -92,195 +92,59 @@ Please use the *Bug report* or *Feature request* templates & add it to the *New*
 
 ---
 
-## Game Dev Team Setup
+## Game Dev Team Onboarding
 
-https://github.com/p3d-project/persona-3-dual
-
-As an overall rule, the team avoids using external libraries as much as possible. We want to build everything ourselves.
-
-> The one notably exception is the Maxmod audio library
-
-The team uses **melonDS** for testing, **VS Code** as the development IDE, & **Docker** as the development environment.
-
-### Prerequisites
-
-You need to have [melonDS](https://melonds.kuribo64.net/), [VS Code](https://code.visualstudio.com/), & [Docker](https://www.docker.com/) already installed on your system.
-
-#### melonDS
-
-- Go to `Config → Emu settings → Devtools`
-- Ensure `Enable GBD stub` is checked
-- Ensure the ARM9 port is `2345` & `Break on startup` is checked
-
-> When debugging, ensure that melonDS is already launched
-
-![melonDS debug setup](/docs/imgs/onboarding/melonds-debug.png)
-
-#### VS Code
-
-- Ensure that the `Dev Containers` extension is installed
-  ![Dev Containers extension](/docs/imgs/onboarding/extension.png)
-
-#### Docker
-
-- Ensure that Docker is launched & running
-
-> Docker needs to be running whenever you want to code
-
-### 1. Clone the Repo
-
-```bash
-git clone https://github.com/p3d-project/persona-3-dual.git
-cd persona-3-dual
-```
-
-### 2. Set Up Code Formatting
-
-This project uses [pre-commit](https://pre-commit.com) to auto-format all source files before every commit. It handles C/C++ (clang-format), Python (black + ruff), and web files (prettier).
-
-Install pre-commit:
-
-```bash
-# macOS
-brew install pre-commit
-
-# Windows / Linux
-pip install pre-commit
-```
-
-Register the hooks:
-
-```bash
-pre-commit install
-```
-
-That's it. Hooks run automatically every time you run `git commit`.
-
-**What happens during a commit:**
-
-The hooks reformat your staged files in-place. If any file is changed, the commit is **aborted** so you can review the diff. Just re-stage and commit again.
-
-**Run hooks manually (e.g. before opening a PR):**
-
-```bash
-pre-commit run --all-files
-```
-
-> **Windows note:** prettier requires Node.js. pre-commit downloads a local copy automatically the first time you run `pre-commit install` or `pre-commit run`.
-
-### 3. Open the repo in VS Code
-
-Open the persona-3-dual repo in VS Code. Then, click the bottom left `><` icon & select `Reopen in Container`
-
-> You may also see a notification on the bottom right to `Reopen in Container`. This method also works!
-![Launch container](/docs/imgs/onboarding/dev-container.png)
-If this is your first time launching the container, it may take a few minutes for Docker to install the image. Otherwise, VS Code should re-launch within a few seconds.
-
-You are now ready to code!
-
-### Debugging
-
-> Ensure melonDS is already launched & awaiting the debugger
-
-1. Build in debug mode (you can use the `make debug` task or just open a terminal inside the container and run `make DEBUG=1`)
-1. In VS Code, go to the `Run and Debug` tab on the left panel, and select `[Docker] (gdb) Connect to melonDS`
-   ![VS Code debug tab](/docs/imgs/onboarding/vscode-debug.png)
-
-You are now ready to debug!
+{% GoogleDoc
+   src="https://docs.google.com/document/d/1eAcjnGire_6JqSkC-P5_KWOHqRO1efldPTG5_AM-Yso"
+   isEditable=true /%}
 
 ---
 
-## Web Dev Team Setup
+## Web Dev Team Onboarding
 
-https://github.com/p3d-project/p3d-website
-The website is an [Astro](https://astro.build) project.
-
-The team uses **VS Code** as the development IDE, & **Node.js**.
-
-### Prerequisites
-
-You need to have [Node.js](https://nodejs.org), & [VS Code](https://code.visualstudio.com/) already installed on your system.
-
-### 1. Clone the Repo
-
-```bash
-git clone https://github.com/p3d-project/p3d-website.git
-cd p3d-website
-```
-
-### 2 Install Dependencies
-
-```bash
-npm install
-```
-
-### 3. Run the site
-
-#### Build for development
-
-```bash
-npm run dev
-```
-
-The site will be available at `http://localhost:4321` by default.
-
-#### Build for production
-
-```bash
-npm run build
-```
-
-You are now ready to code!
+{% GoogleDoc
+   src="https://docs.google.com/document/d/1FOIDls2EuZELvWkOowq0npckboeECDNRr_mTUPx4srE"
+   isEditable=true /%}
 
 ---
 
-## Graphics Team Setup
+## Graphics Team Onboarding
 
-### Workflow
-
-- **Upload all completed assets and their editable source files to the Team Google Drive [Graphics Folder](https://drive.google.com/drive/folders/1MS2eOnHn5RiMcLRfc8K1s2ZR8FcY3tgq?usp=sharing).**
-- Track your work on the project board. Move issues through the columns as you progress.
-- When uploading assets and closing an issue, leave a comment on the related issue with a link to the Drive folder, and upload viewable images to the issue.
+{% GoogleDoc
+   src="https://docs.google.com/document/d/1YIasl_G5QzoJzWHDliMppc5RFMgMDhWfq-yDDqBlv0I"
+   isEditable=true /%}
 
 ---
 
-## UX/UI Team Setup
+## UX/UI Team Onboarding
 
-### Workflow
-
-- **Upload all completed assets and their editable source files to the Team Google Drive [UX/UI Folder](https://drive.google.com/drive/folders/1NU6uU6YxzGKnnmSKPJLesKwnWe7O5gmR?usp=drive_link).**
-- Track your work on the project board. Move issues through the columns as you progress.
-- When uploading assets and closing an issue, leave a comment on the related issue with a link to the Drive folder, and upload viewable images to the issue.
+{% GoogleDoc
+   src="https://docs.google.com/document/d/1WK4RCAvTAPcIlvsAGbjVSu8k4TqSAqjuQD33EOw7CwY"
+   isEditable=true /%}
 
 ---
 
-## 3D Team Setup
+## 3D Team Onboarding
 
-### Workflow
-
-- **Upload all completed assets and their editable source files to the Team Google Drive [3D Folder](https://drive.google.com/drive/folders/1FAb7dC2GPEaNTfF5tSxioYkLp6wkU7tT?usp=drive_link).**
-- Track your work on the project board. Move issues through the columns as you progress.
-- When uploading assets and closing an issue, leave a comment on the related issue with a link to the Drive folder, and upload viewable images to the issue.
+{% GoogleDoc
+   src="https://docs.google.com/document/d/1T3Bk_c6sQtvyrXqIxzxEUx0O0ER7RhzuzFvar9jIrMQ"
+   isEditable=true /%}
 
 ---
 
-## Music Team Setup
+## Music Team Onboarding
 
-### Workflow
-
-- **Upload all completed assets and their editable source files to the Team Google Drive [Music Folder](https://drive.google.com/drive/folders/1suMTqGlqu1NUYZJ7DqjVpWIshWF2ZbXA?usp=drive_link).**
-- Track your work on the project board. Move issues through the columns as you progress.
-- When uploading assets and closing an issue, leave a comment on the related issue with a link to the Drive folder, and upload viewable images to the issue.
+{% GoogleDoc
+   src="https://docs.google.com/document/d/1BkTlDdY_P6Gi9dNa2rNjt-xAFK9VZ2-vqgdy8FAL9J0"
+   isEditable=true /%}
 
 ---
 
-## Video Team Setup
+## Video Team Onboarding
 
-### Workflow
-
-- **Upload all completed assets and their editable source files to the Team Google Drive [Video Folder](https://drive.google.com/drive/folders/1AFeO9BUEUAk4rjtS9qVomzTrRqkwQMvz?usp=drive_link).**
-- Track your work on the project board. Move issues through the columns as you progress.
-- When uploading assets and closing an issue, leave a comment on the related issue with a link to the Drive folder, and upload viewable images to the issue.
+{% GoogleDoc
+   src="https://docs.google.com/document/d/1vO4GO9W7QCeGC-qUTfu7NZQpkeWsurRPSGi34xtcWBA"
+   isEditable=true /%}
 
 ---
 

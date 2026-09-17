@@ -190,7 +190,10 @@ Please note that the presets circled in red do not work properly with the CMake 
 
 Finally, to build the game press the Build button in the bottom bar. Please note that the "run" and "debug buttons do not work.
 
-{% SizedImage src="/docs/imgs/cmake/CMakePlugin.png" alt="CMakePlugin" width=350 /%}\
+{% SizedImage
+   src="/docs/imgs/cmake/CMakePlugin.png"
+   alt="CMakePlugin"
+   width=350 /%}
 
 {% SizedImage
    src="/docs/imgs/cmake/CMakePluginBuild.png"
@@ -232,12 +235,7 @@ ctest --preset test-host
 Ensure melonDS is already launched & awaiting the debugger
 
 - Build the Game in debug mode
-
-  ```
-  cmake --preset debug
-  cmake --build --preset debug --parallel
-  ```
-
+  - Use the debug preset and build the game with the VS Code plugin or CLI.
 - In VS Code, go to the Run and Debug tab on the left panel, and select [Docker] (gdb) Connect to melonDS
 
 You are now ready to debug!

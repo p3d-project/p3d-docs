@@ -144,19 +144,22 @@ You are now ready to code!
 
 ### Building
 
-To build, simply use make. If you do not need to update the SD card image, use make SKIPSD=1
+We use CMake as our build system, to build the game Run the following commands
 
-If this error appears
+```
+cmake --preset release
+cmake --build --preset release --parallel
+```
 
-[in#0 @ 000001fea6e491c0] Format mov,mp4,m4a,3gp,3g2,mj2 detected only with low score of 1, misdetection possible!
+For release build default preset can be used instead:
 
-[in#0 @ 000001fea6e491c0] moov atom not found
+```
+ cmake --preset default    
+ cmake --build --preset default   --parallel
+```
 
-[in#0 @ 000001fea6e48f80] Error opening input: Invalid data found when processing input
-
-Error opening input file C:/p3d/persona-3-dual/assets/video/base.mp4.
-
-Error opening input files: Invalid data found when processing input
+\
+\
 
 Its most likely due to non pulled LFS media. Pull it with
 
@@ -170,7 +173,9 @@ git lfs pull
 
 Ensure melonDS is already launched & awaiting the debugger
 
-- Build in debug mode (you can use the make debug task or just open a terminal inside the container and run make DEBUG=1)
+- ```cmake
+  Build in debug mode 
+  ```
 - In VS Code, go to the Run and Debug tab on the left panel, and select [Docker] (gdb) Connect to melonDS
 
 You are now ready to debug!

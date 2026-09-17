@@ -144,7 +144,14 @@ You are now ready to code!
 
 ### Building
 
-We use CMake as our build system, to build the game run the following commands
+To build the game with CMake, you can either
+
+- Install the official CMake VS Code Plugin
+- Use the CLI
+
+#### Building with CLI
+
+To build the game run the following commands in the CLI:
 
 ```
 cmake --preset release
@@ -157,6 +164,40 @@ For release build default preset can be used instead:
  cmake --preset default    
  cmake --build --preset default   --parallel
 ```
+
+#### Building with VS Code Plugin
+
+Firstly, the following CMake plugin settings need to be applied for it to detect presets from CMakePresets.json\
+
+{% SizedImage
+   src="/docs/imgs/cmake/CMakePluginDetection.png"
+   alt="CMakePluginDetection"
+   width=350 /%}
+
+Then open the Plugin in the sidebar, under "Configure" press the pencil icon and select your build preset.\
+
+{% SizedImage
+   src="/docs/imgs/cmake/CMakePluginSelectPreset.png"
+   alt="CMakePluginSelectPreset"
+   width=350 /%}
+
+Please note that the presets circled in red do not work properly with the CMake plugin, and when needed have to be used over the CLI.
+
+{% SizedImage
+   src="/docs/imgs/cmake/CMakeCliOnlyPresets.png"
+   alt="CMakeCliOnlyPresets"
+   width=350 /%}
+
+Finally, to build the game press the Build button in the bottom bar. Please note that the "run" and "debug buttons do not work.
+
+{% SizedImage src="/docs/imgs/cmake/CMakePlugin.png" alt="CMakePlugin" width=350 /%}\
+
+{% SizedImage
+   src="/docs/imgs/cmake/CMakePluginBuild.png"
+   alt="CMakePluginBuild"
+   width=350 /%}
+
+#### LFS media
 
 If you encounter a media related error, it is most likely due to non pulled LFS media. Pull it with
 
@@ -171,6 +212,18 @@ git lfs pull
 - `aegis-engine-host-debug` — debug build of the engine.
 - `host-debug` — build and run tests on PC.
 - `host-assets` — regenerate assets while working on them.
+
+#### **Tests**
+
+To run tests, run the following commands in the CLI
+
+```
+cmake --preset debug
+
+cmake --build --preset build-host-tests --parallel
+
+ctest --preset test-host
+```
 
 ---
 

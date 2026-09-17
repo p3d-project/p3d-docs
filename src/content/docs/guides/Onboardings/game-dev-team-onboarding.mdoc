@@ -144,7 +144,7 @@ You are now ready to code!
 
 ### Building
 
-We use CMake as our build system, to build the game Run the following commands
+We use CMake as our build system, to build the game run the following commands
 
 ```
 cmake --preset release
@@ -158,14 +158,19 @@ For release build default preset can be used instead:
  cmake --build --preset default   --parallel
 ```
 
-\
-\
-
-Its most likely due to non pulled LFS media. Pull it with
+If you encounter a media related error, it is most likely due to non pulled LFS media. Pull it with
 
 ```
 git lfs pull
 ```
+
+#### **Presets**
+
+- `nds-release` — release build of the ROM.
+- `nds-debug` — debug build of the ROM.
+- `aegis-engine-host-debug` — debug build of the engine.
+- `host-debug` — build and run tests on PC.
+- `host-assets` — regenerate assets while working on them.
 
 ---
 
@@ -173,9 +178,13 @@ git lfs pull
 
 Ensure melonDS is already launched & awaiting the debugger
 
-- ```cmake
-  Build in debug mode 
+- Build the Game in debug mode
+
   ```
+  cmake --preset debug
+  cmake --build --preset debug --parallel
+  ```
+
 - In VS Code, go to the Run and Debug tab on the left panel, and select [Docker] (gdb) Connect to melonDS
 
 You are now ready to debug!

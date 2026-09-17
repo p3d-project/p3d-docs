@@ -80,7 +80,37 @@ main {
   font-size: 18px;
 }
 
-@media (width >= 50em) {
+/* From https://github.com/Fevol/starlight-theme-obsidian/blob/438d41647d9e990b7ce1d95b6793fd7c303df142/packages/starlight-theme-obsidian/styles/centered-reading.css#L234 */
+/* Display search button like a textbox instead of an icon in mobile */
+@media (width < 50em) {
+  .sidebar site-search {
+    button[data-open-modal] {
+      border: 1px solid var(--sl-color-gray-5);
+      border-radius: 0.5rem;
+      padding-inline-start: 0.75rem;
+      padding-inline-end: 0.5rem;
+      background-color: var(--sl-color-black);
+      color: var(--sl-color-gray-2);
+      font-size: var(--sl-text-sm);
+      width: 100%;
+    }
+
+    button[data-open-modal]:hover {
+      border-color: var(--sl-color-gray-2);
+      color: var(--sl-color-white);
+    }
+
+    button[data-open-modal] > :last-child {
+      margin-inline-start: auto;
+    }
+
+    :is(button, .inc-spec) span {
+      display: block;
+    }
+  }
+}
+
+@media (width >= 50rem) {
   :root {
     --sl-nav-height: 0;
   }
@@ -90,7 +120,7 @@ main {
   }
 }
 
-@media (width >= 72em) {
+@media (width >= 72rem) {
   .main-pane {
     padding-top: 0;
   }

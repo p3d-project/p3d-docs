@@ -33,6 +33,7 @@ export default defineConfig({
       ],
       customCss: ['./src/styles/starlight.css'],
       components: {
+        Header: './src/components/overrides/Header.astro',
         PageFrame: './src/components/overrides/PageFrame.astro',
         Sidebar: './src/components/overrides/Sidebar.astro',
         SiteTitle: './src/components/overrides/SiteTitle.astro',

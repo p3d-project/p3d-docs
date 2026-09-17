@@ -100,10 +100,6 @@ main {
       color: var(--sl-color-white);
     }
 
-    button[data-open-modal] > :last-child {
-      margin-inline-start: auto;
-    }
-
     :is(button, .inc-spec) span {
       display: block;
     }

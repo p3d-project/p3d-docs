@@ -181,6 +181,13 @@ cmake --preset debug
 cmake --build --preset debug --parallel
 ```
 
+To use a different preset (e.g. the SD card variant), just swap it in like this:
+
+```
+cmake --preset <preset>
+cmake --build --preset <preset> --parallel
+```
+
 #### Building with VS Code Plugin
 
 Firstly, the following CMake plugin settings need to be applied for VS Code to detect presets from CMake. In VS Code's Settings, search `@ext:ms-vscode.cmake-tools @modified` and set:

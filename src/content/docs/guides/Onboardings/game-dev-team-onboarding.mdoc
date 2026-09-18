@@ -171,7 +171,6 @@ Release builds are builds of the game that are publicly shared and uploaded (hen
 ```
 cmake --preset release
 cmake --build --preset release --parallel
-
 ```
 
 Debug builds are builds of the game with extra diagnostic information, used during development and testing rather than for public release. To create a debug build, run:
@@ -215,28 +214,19 @@ Open the plugin in VS Code's sidebar. Under "Configure", press the pencil icon a
    alt="CMakeCliOnlyPresets"
    width=550 /%}
 
-To build the game, press the Build button in the CMake extension itself.
+To build the game, open the CMake extension in the Activity Bar, and press the "Build" button. We recommend pinning the "Build" and "Clean" commands, and unpinning "Configure Task" and "Run Task", so they're easier to access.
 
 {% SizedImage
-   src="/docs/imgs/cmake/CMakePlugin.png"
+   src="/docs/imgs/cmake/CMakeBuilding.png"
    alt="CMakePlugin"
    width=550 /%}
 
-> Note: CMake's native "Run" and "Debug" are unsupported, and do not work. See [Debugging](#debugging) below.
+> Note: CMake's native "Run" and "Debug" are unsupported, and do not work. See [Debugging](#debugging) below. We recommend removing CMake from the bottom bar entirely to avoid confusion — right-click on one of the CMake icons in the bottom bar and uncheck "CMake" from the list.
 
 {% SizedImage
-   src="/docs/imgs/cmake/CMakePluginBuild.png"
+   src="/docs/imgs/cmake/CMakeHidingBar.png"
    alt="CMakePluginBuild"
    width=550 /%}
-
-#### LFS media
-
-If you encounter a media related error, it's most likely due to non pulled LFS media. Pull it with
-
-```
-git lfs pull
-
-```
 
 #### Tests
 
@@ -244,11 +234,16 @@ Tests are used to ensure any new changes haven't broken old logic and are used d
 
 ```
 cmake --preset debug
-
 cmake --build --preset build-host-tests --parallel
-
 ctest --preset test-host
+```
 
+#### LFS media
+
+If you encounter a media related error, it's most likely due to non pulled LFS media. Pull it with
+
+```
+git lfs pull
 ```
 
 ---

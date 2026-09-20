@@ -17,6 +17,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Docs',
+      favicon: '/favicon.ico',
       // https://starlight.astro.build/reference/icons/
       social: [
         {
@@ -32,7 +33,10 @@ export default defineConfig({
       ],
       customCss: ['./src/styles/starlight.css'],
       components: {
-        SiteTitle: './src/components/SiteTitle.astro',
+        Header: './src/components/overrides/Header.astro',
+        PageFrame: './src/components/overrides/PageFrame.astro',
+        Sidebar: './src/components/overrides/Sidebar.astro',
+        SiteTitle: './src/components/overrides/SiteTitle.astro',
       },
       expressiveCode: {
         shiki: {

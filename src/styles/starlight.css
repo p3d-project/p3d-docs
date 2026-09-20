@@ -3,3 +3,120 @@
 @import '@astrojs/starlight-tailwind';
 @import 'tailwindcss/theme.css' layer(theme);
 @import 'tailwindcss/utilities.css' layer(utilities);
+
+@font-face {
+  font-family: 'BM Space';
+  src: url('@assets/fonts/BM_Space.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MgOpen Cosmetica';
+  src: url('@assets/fonts/MgOpen_Cosmetica-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  src: url('@assets/fonts/NotoSansJP-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  /* breakpoints used by starlight (util.css) */
+  --breakpoint-md: 50rem;
+  --breakpoint-lg: 72rem;
+
+  --color-accent-200: #65f1a2;
+  --color-accent-600: #00ca69;
+  --color-accent-900: #1c7637;
+  --color-accent-950: #042212;
+
+  --color-gray-100: #eff8ff;
+  --color-gray-200: #dff0ff;
+  --color-gray-300: #b0c5d7;
+  --color-gray-400: #6791b2;
+  --color-gray-500: #345c7b;
+  --color-gray-700: #123c59;
+  --color-gray-800: #002944;
+  --color-gray-900: #091a27;
+}
+
+main h1 {
+  font-family: 'BM Space', sans-serif;
+  font-size: calc(54.9px / 1.25);
+}
+
+main h2 {
+  font-family: 'Noto Sans Japanese', sans-serif;
+  font-weight: 900;
+  font-size: calc(43.9px / 1.25);
+}
+
+main h3 {
+  font-family: 'Noto Sans Japanese', sans-serif;
+  font-weight: 800;
+  font-size: calc(35.2px / 1.25);
+}
+
+main h4 {
+  font-family: 'Noto Sans Japanese', sans-serif;
+  font-weight: 600;
+  font-size: calc(28.1px / 1.25);
+}
+
+main h5 {
+  font-family: 'MgOpen Cosmetica', sans-serif;
+  font-weight: 400;
+  font-size: calc(22.5px / 1.25);
+}
+
+main {
+  font-family: 'MgOpen Cosmetica', sans-serif;
+  font-size: 18px;
+}
+
+/* From https://github.com/Fevol/starlight-theme-obsidian/blob/438d41647d9e990b7ce1d95b6793fd7c303df142/packages/starlight-theme-obsidian/styles/centered-reading.css#L234 */
+/* Display search button like a textbox instead of an icon in mobile */
+@media (width < 50em) {
+  .sidebar site-search {
+    button[data-open-modal] {
+      border: 1px solid var(--sl-color-gray-5);
+      border-radius: 0.5rem;
+      padding-inline-start: 0.75rem;
+      padding-inline-end: 0.5rem;
+      background-color: var(--sl-color-black);
+      color: var(--sl-color-gray-2);
+      font-size: var(--sl-text-sm);
+      width: 100%;
+    }
+
+    button[data-open-modal]:hover {
+      border-color: var(--sl-color-gray-2);
+      color: var(--sl-color-white);
+    }
+
+    :is(button, .inc-spec) span {
+      display: block;
+    }
+  }
+}
+
+@media (width >= 50rem) {
+  :root {
+    --sl-nav-height: 0;
+  }
+
+  .main-pane {
+    padding-top: 48px;
+  }
+}
+
+@media (width >= 72rem) {
+  .main-pane {
+    padding-top: 0;
+  }
+}

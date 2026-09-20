@@ -144,21 +144,103 @@ You are now ready to code!
 
 ### Building
 
-To build, simply use make. If you do not need to update the SD card image, use make SKIPSD=1
+#### Presets
 
-If this error appears
+- `nds-release` — release build of the ROM.
+- `nds-debug` — debug build of the ROM.
+- `aegis-engine-host-debug` — debug build of the engine.
+- `host-debug` — build and run tests on PC.
+- `host-assets` — regenerate assets while working on them.
 
-[in#0 @ 000001fea6e491c0] Format mov,mp4,m4a,3gp,3g2,mj2 detected only with low score of 1, misdetection possible!
+To build the game with CMake, you can either
 
-[in#0 @ 000001fea6e491c0] moov atom not found
+- Install the official CMake VS Code Plugin
+- Use the CLI
 
-[in#0 @ 000001fea6e48f80] Error opening input: Invalid data found when processing input
+#### Building with CLI
 
-Error opening input file C:/p3d/persona-3-dual/assets/video/base.mp4.
+By default, running the following commands builds the game, which defaults to making a release build:
 
-Error opening input files: Invalid data found when processing input
+```
+cmake --preset default
+cmake --build --preset default --parallel
+```
 
-Its most likely due to non pulled LFS media. Pull it with
+Release builds are builds of the game that are publicly shared and uploaded (hence, a release build). To create a release build, run the following commands in your terminal:
+
+```
+cmake --preset release
+cmake --build --preset release --parallel
+```
+
+Debug builds are builds of the game with extra diagnostic information, used during development and testing rather than for public release. To create a debug build, run:
+
+```
+cmake --preset debug
+cmake --build --preset debug --parallel
+```
+
+To use a different preset (e.g. the SD card variant), just swap it in like this:
+
+```
+cmake --preset <preset>
+cmake --build --preset <preset> --parallel
+```
+
+#### Building with VS Code Plugin
+
+Firstly, the following CMake plugin settings need to be applied for VS Code to detect presets from CMake. Open the CMake plugin's settings and set:
+
+- **CMake: Build Task** — check "Build using tasks.json instead of internal process"
+- **CMake: Cmake Communication Mode** — `fileApi`
+- **CMake: Use CMake Presets** — `always`
+
+{% SizedImage
+   src="/docs/imgs/cmake/CMakePluginDetection.png"
+   alt="CMakePluginDetection"
+   width=550 /%}
+
+Open the plugin in VS Code's sidebar. Under "Configure", press the pencil icon and select your build preset.
+
+{% SizedImage
+   src="/docs/imgs/cmake/CMakePluginSelectPreset.png"
+   alt="CMakePluginSelectPreset"
+   width=550 /%}
+
+> Note: the `Default`, `Release`, and `Debug` presets (circled in red) only work for CMake in the terminal, and won't work properly with the CMake plugin. Use the explicit build presets instead.
+
+{% SizedImage
+   src="/docs/imgs/cmake/CMakeCliOnlyPresets.png"
+   alt="CMakeCliOnlyPresets"
+   width=550 /%}
+
+To build the game, open the CMake extension in the Activity Bar, and press the "Build" button. We recommend pinning the "Build" and "Clean" commands, so they're easier to access.
+
+{% SizedImage
+   src="/docs/imgs/cmake/CMakeBuilding.png"
+   alt="CMakePlugin"
+   width=550 /%}
+
+> Note: CMake's native "Run" and "Debug" are unsupported, and do not work. See [Debugging](#debugging) below. We recommend removing CMake from the bottom bar entirely to avoid confusion — right-click on one of the CMake icons in the bottom bar and uncheck "CMake" from the list.
+
+{% SizedImage
+   src="/docs/imgs/cmake/CMakeHidingBar.png"
+   alt="CMakePluginBuild"
+   width=550 /%}
+
+#### Tests
+
+Tests are used to ensure any new changes haven't broken old logic and are used during regression testing. To run tests, run the following commands in the terminal:
+
+```
+cmake --preset debug
+cmake --build --preset build-host-tests --parallel
+ctest --preset test-host
+```
+
+#### LFS media
+
+If you encounter a media related error, it's most likely due to non pulled LFS media. Pull it with
 
 ```
 git lfs pull
@@ -170,7 +252,8 @@ git lfs pull
 
 Ensure melonDS is already launched & awaiting the debugger
 
-- Build in debug mode (you can use the make debug task or just open a terminal inside the container and run make DEBUG=1)
+- Build the Game in debug mode
+  - Use the debug preset and build the game with the VS Code plugin or CLI. See [Building](#building) above.
 - In VS Code, go to the Run and Debug tab on the left panel, and select [Docker] (gdb) Connect to melonDS
 
 You are now ready to debug!

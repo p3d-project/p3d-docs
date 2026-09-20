@@ -56,17 +56,16 @@ jobs:
 
       - name: Deploy PR Preview Worker
         if: github.event_name == 'pull_request'
-        id: deploy_docs
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: versions upload --tag="${{ github.head_ref }}" --preview-alias="pr-${{ github.event.pull_request.number }}" --message="${{ github.event.pull_request.title }}"
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_BRANCH: ${{ github.head_ref }}
+        run: pnpm exec wrangler versions upload --tag="$PR_BRANCH" --preview-alias="pr-$PR_NUMBER" --message="$PR_TITLE"
 
       - name: Post PR Comment
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && github.event.action == 'opened'
         uses: actions/github-script@v9
-        env:
-          PREVIEW_URL: ${{ steps.deploy_docs.outputs.deployment-url }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -74,5 +73,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `🚀 **Preview Deployed!**\n\nTake a peek over at: ${process.env.PREVIEW_URL}`
+              body: `🚀 **Preview Deployed!**\n\nTake a peek over at: <https://pr-${context.payload.pull_request.number}-p3d-docs.thep3dproject-a24.workers.dev/>`
             })

@@ -1,7 +1,4 @@
 allowBuilds:
   esbuild: true
   lefthook: true
-  sharp: true
   workerd: true
-patchedDependencies:
-  '@keystatic/astro': patches/@keystatic__astro.patch

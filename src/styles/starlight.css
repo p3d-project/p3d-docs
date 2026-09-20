@@ -47,31 +47,31 @@
 
 main h1 {
   font-family: 'BM Space', sans-serif;
-  font-size: 54.9px;
+  font-size: calc(54.9px / 1.25);
 }
 
 main h2 {
   font-family: 'Noto Sans Japanese', sans-serif;
   font-weight: 900;
-  font-size: 43.9px;
+  font-size: calc(43.9px / 1.25);
 }
 
 main h3 {
   font-family: 'Noto Sans Japanese', sans-serif;
   font-weight: 800;
-  font-size: 35.2px;
+  font-size: calc(35.2px / 1.25);
 }
 
 main h4 {
   font-family: 'Noto Sans Japanese', sans-serif;
   font-weight: 600;
-  font-size: 28.1px;
+  font-size: calc(28.1px / 1.25);
 }
 
 main h5 {
   font-family: 'MgOpen Cosmetica', sans-serif;
   font-weight: 400;
-  font-size: 22.5px;
+  font-size: calc(22.5px / 1.25);
 }
 
 main {

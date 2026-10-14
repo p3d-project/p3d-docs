@@ -1,22 +1,25 @@
 ---
 import MobileMenuToggle from '@astrojs/starlight/components/MobileMenuToggle.astro';
+const { hasSidebar } = Astro.locals.starlightRoute;
 ---
 
 <div class="page sl-flex">
   <header class="header md:hidden">
     <slot name="header" />
   </header>
-  <nav
-    class="sidebar print:hidden"
-    aria-label={Astro.locals.t('sidebarNav.accessibleLabel')}
-  >
-    <MobileMenuToggle />
-    <div id="starlight__sidebar" class="sidebar-pane">
-      <div class="sidebar-content sl-flex">
-        <slot name="sidebar" />
+  {hasSidebar && (
+    <nav
+      class="sidebar print:hidden"
+      aria-label={Astro.locals.t('sidebarNav.accessibleLabel')}
+    >
+      <MobileMenuToggle />
+      <div id="starlight__sidebar" class="sidebar-pane">
+        <div class="sidebar-content sl-flex">
+          <slot name="sidebar" />
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  )}
   <div class="main-frame">
     <slot />
   </div>

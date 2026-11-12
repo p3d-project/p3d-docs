@@ -54,7 +54,7 @@ The usage of AI tools is permitted **if used responsibly,** to be more precise u
 
 > Note: This setup only works for [*persona-3-dual*](https://github.com/p3d-project/persona-3-dual) *and* [*aegis-engine*](https://github.com/p3d-project/aegis-engine)*.* [*p3d-amicitia*](https://github.com/p3d-project/p3d-amicitia) *dev setup is NOT covered.*
 
-The team uses **melonDS** for testing, **VS Code** as the development IDE, & **Docker** as the development environment.
+The team uses **melonDS** for testing, **VS Code** or *Zed* as the development IDE, & **Docker** as the development environment.
 
 ---
 
@@ -71,6 +71,10 @@ You need to have [melonDS](https://melonds.kuribo64.net/), [VS Code](https://cod
 #### VS Code
 
 - Ensure that the Dev Containers extension is installed
+
+#### Zed
+
+- Ensure that your Zed editor is updated to at least 1.0
 
 #### Docker
 
@@ -132,11 +136,21 @@ pre-commit run --all-files
 
 > **Windows note:** prettier requires Node.js. pre-commit downloads a local copy automatically the first time you run pre-commit install or pre-commit run.
 
-### 3. Open the repo in VS Code
+### 3. Open the repo in your editor of choice
+
+#### VS Code
 
 Open the persona-3-dual repo in VS Code. Then, click the bottom left >< icon & select Reopen in Container
 
 You may also see a notification on the bottom right to Reopen in Container. This method also works!  If this is your first time launching the container, it may take a few minutes for Docker to install the image. Otherwise, VS Code should re-launch within a few seconds.
+
+#### Zed
+
+Open the persona-3-dual repo in Zed. You should see a notification to Reopen in Container.
+
+If this is your first time launching the container, it may take a few minutes for Docker to install the image. Otherwise, Zed should re-open it within a few seconds.
+
+If you do not see a notification then you can open it up using Zed’s command palette to run the “Project: Open Remote” command and select the option to open the project in a dev container. 
 
 You are now ready to code!
 

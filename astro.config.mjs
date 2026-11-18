@@ -17,7 +17,42 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Docs',
+      // fallback for pages without their own description
+      description:
+        'Documentation for the P3D Project and Persona 3 Dual, the open-source demake of Persona 3 for dual-screen hardware.',
       favicon: '/favicon.ico',
+      head: [
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'og:image',
+            content: 'https://docs.p3dual.com/share-image.png',
+          },
+        },
+        { tag: 'meta', attrs: { property: 'og:image:width', content: '863' } },
+        { tag: 'meta', attrs: { property: 'og:image:height', content: '640' } },
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'og:image:alt',
+            content: "Persona 3 Dual logo over Makoto's silhouette",
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            name: 'twitter:image',
+            content: 'https://docs.p3dual.com/share-image.png',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            name: 'twitter:image:alt',
+            content: "Persona 3 Dual logo over Makoto's silhouette",
+          },
+        },
+      ],
       // https://starlight.astro.build/reference/icons/
       social: [
         {

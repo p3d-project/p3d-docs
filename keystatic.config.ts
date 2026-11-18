@@ -55,10 +55,17 @@ const baseSchema = {
   }),
 } satisfies Record<string, ComponentSchema>;
 
+const descriptionField = fields.text({
+  label: 'Description',
+  description:
+    'One or two sentences shown in search results and link previews. Optional.',
+});
+
 const singletonSchema = {
   title: fields.text({
     label: 'Title',
   }),
+  description: descriptionField,
   ...baseSchema,
 } satisfies Record<string, ComponentSchema>;
 
@@ -66,6 +73,7 @@ const collectionSchema = {
   title: fields.slug({
     name: { label: 'Title' },
   }),
+  description: descriptionField,
   ...baseSchema,
 } satisfies Record<string, ComponentSchema>;
 
